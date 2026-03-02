@@ -1,70 +1,86 @@
+/* RESET */
 html, body {
-  margin:0; padding:0; height:100%; overflow-x:hidden; font-family:'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* hilangkan scroll */
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+  text-align: center;
 }
 
+/* BODY BACKGROUND */
 body {
   background: linear-gradient(120deg, #1a0028 0%, #2a003a 30%, #001a4d 60%, #002966 100%);
   background-size: 400% 400%;
   animation: bgMove 12s ease infinite;
-  min-height: 100vh;
-  padding: 40px 20px;
-  text-align: center;
-  color:#f7eaff;
-  box-sizing: border-box;
+  color: #f7eaff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* penuh viewport */
+  padding: 0;    /* padding dibuang supaya tak scroll */
+  overflow: hidden;
 }
 
-@keyframes bgMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
+/* ANIMASI BACKGROUND */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-h1{
-  font-family:'Dancing Script', cursive;
-  font-size:64px;
-  letter-spacing:4px;
-  margin-bottom:10px;
-  text-shadow:0 0 15px rgba(190,80,255,0.9), 0 0 35px rgba(120,180,255,0.6);
+/* TITLE */
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 64px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px rgba(190,80,255,0.9), 0 0 35px rgba(120,180,255,0.6);
 }
 
-#progressText{
-  margin-bottom:50px;
-  font-weight:600;
-  font-size:18px;
+/* PROGRESS TEXT */
+#progressText {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
-.sheet-container{
-  display:grid;
+/* SHEET CONTAINER */
+.sheet-container {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap:30px;
-  max-width:900px;
-  margin:0 auto;
+  gap: 30px;
+  max-width: 900px;
+  width: 100%;
 }
 
-.sheet-box{
-  display:block;
-  padding:28px 20px;
-  border-radius:22px;
+/* SHEET BOX */
+.sheet-box {
+  display: block;
+  padding: 28px 20px;
+  border-radius: 22px;
   background: rgba(255,255,255,0.08);
-  border:1.5px solid rgba(190,80,255,0.6);
+  border: 1.5px solid rgba(190,80,255,0.6);
   backdrop-filter: blur(12px);
-  box-shadow:0 0 25px rgba(190,80,255,0.45), 0 0 45px rgba(120,180,255,0.35);
-  font-weight:600;
-  opacity:0;
+  box-shadow: 0 0 25px rgba(190,80,255,0.45), 0 0 45px rgba(120,180,255,0.35);
+  font-weight: 600;
+  opacity: 0;
   transform: translateY(20px);
   animation: popUp 0.5s forwards;
-  color:#fff;
-  text-decoration:none;
+  color: #fff;
+  text-decoration: none;
   transition: all 0.4s ease;
 }
 
-.sheet-box:hover{
+.sheet-box:hover {
   transform: translateY(-8px) scale(1.03);
-  box-shadow:0 0 40px rgba(190,80,255,0.75), 0 0 70px rgba(120,180,255,0.55);
+  box-shadow: 0 0 40px rgba(190,80,255,0.75), 0 0 70px rgba(120,180,255,0.55);
 }
 
-@keyframes popUp{
-  to {opacity:1; transform: translateY(0);}
+@keyframes popUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .sheet-box.completed {
@@ -73,17 +89,18 @@ h1{
   background: rgba(80,255,120,0.15);
 }
 
-.back-btn{
-  display:inline-block;
-  margin-top:50px;
-  padding:14px 36px;
+/* BACK BUTTON */
+.back-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 36px;
   background: rgba(190,80,255,0.45);
-  color:#fff;
-  text-decoration:none;
-  border-radius:16px;
-  transition:0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 16px;
+  transition: 0.3s ease;
 }
 
-.back-btn:hover{
+.back-btn:hover {
   background: rgba(190,80,255,0.75);
 }
