@@ -138,14 +138,14 @@ input[type="text"],
 input[type="password"],
 input[type="email"],
 select {
-    width: 200px;
     padding: 4px;
     font-size: 12px;
     margin-bottom: 8px;
 }
 
+/* Full width inputs */
 .full {
-    width: 400px;
+    width: 440px; /* same width as First + Last Name combined */
 }
 
 /* ===== RANGE ===== */
