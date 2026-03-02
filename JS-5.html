@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Art Store</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f5f5;
+}
+
+/* TOP BAR */
+.top-bar {
+  background: #222;
+  color: #fff;
+  padding: 8px 40px;
+  font-size: 14px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+/* HEADER */
+header {
+  background: #eee;
+  padding: 20px 40px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+/* NAV */
+nav {
+  background: #f9f9f9;
+  padding: 10px 40px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  margin-right: 20px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* MAIN */
+.container {
+  background: #fff;
+  margin: 20px 40px;
+  padding: 20px;
+}
+
+/* PRODUCT */
+.product {
+  display: flex;
+  gap: 30px;
+}
+
+.product img {
+  width: 400px;
+  border: 1px solid #ccc;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* BOXED SECTION */
+.boxed-section {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-top: 20px;
+  background: #fafafa;
+}
+
+.boxed-section h3 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  margin-top: 0;
+}
+
+/* BUTTONS */
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.buttons button {
+  padding: 8px 14px;
+  border: 1px solid #999;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background: #ddd;
+}
+
+/* SIMILAR */
+.similar-items {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 15px;
+}
+
+.similar-item {
+  text-align: center;
+  width: 150px;
+}
+
+.similar-item img {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+
+.similar-item a {
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+  text-decoration: none;
+  color: blue;
+}
+
+/* VIEW/WISH/CART BUTTONS */
+.btn-group {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.similar-item .btn {
+  padding: 5px 12px;
+  border: 1px solid #999;
+  background: #f2f2f2;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.similar-item .btn:hover {
+  background: #ddd;
+}
+
+/* FOOTER */
+footer {
+  background: #222;
+  color: #ccc;
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+}
+
+/* Product Details heading line */
+.product-info h3 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+  margin-top: 20px;
+}
+
+/* Link style untuk "by Nestle MILO" */
+.blue-link {
+  color: blue;
+  text-decoration: underline;
+}
+.blue-link:hover {
+  color: darkblue;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">
+  <span>My Account</span>
+  <span>Wish List</span>
+  <span>Shopping Cart</span>
+  <span>Checkout</span>
+</div>
+
+<header>
+  <h1>Wanie Store</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Art Works</a>
+  <a href="#">Artists</a>
+</nav>
+
+<div class="container">
+
+  <h2>Feature Product</h2>
+  <p>Nestle' MILO</p>
+  <p>by <a href="https://www.milo.com.my/ms" class="blue-link">Nestle' MILO</a></p>
+
+  <div class="product">
+    <img src="milo.jpeg" alt="Nestle MILO">
+
+    <div class="product-info">
+      <p>
+      Powered by Nestlé MILO, this chocolate malt drink provides long-lasting energy to help you stay active throughout the day. Packed with essential nutrients, MILO supports physical performance while offering a smooth and satisfying chocolate flavour.
+      </p>
+
+      <p class="price">RM 8.50</p>
+
+      <div class="boxed-section">
+        <div class="buttons">
+          <button>Add to Wish List</button>
+          <button>Add to Shopping Cart</button>
+        </div>
+      </div>
+
+      <h3>Product Details</h3>
+      <p><strong>Brand:</strong> Nestlé MILO</p>
+      <p><strong>Product Type:</strong> Chocolate Malt Drink</p>
+      <p><strong>Net Weight:</strong> 1.8 kg</p>
+      <p><strong>Key Benefits:</strong> Energy, Strength, Active Lifestyle</p>
+      <p><strong>Suitable For:</strong> Children and Adults</p>
+
+    </div>
+  </div>
+
+  <div class="boxed-section">
+    <h3>Similar Products</h3>
+    <div class="similar-items">
+      <div class="similar-item">
+        <img src="nes.jpg" alt="Nescafe Classic">
+        <a href="#">Nescafe Classic</a>
+        <div class="btn-group">
+          <button class="btn">View</button>
+          <button class="btn">Wish</button>
+          <button class="btn">Cart</button>
+        </div>
+      </div>
+      <div class="similar-item">
+        <img src="megi.jpg" alt="Maggie Kari">
+        <a href="#">Maggie Kari</a>
+        <div class="btn-group">
+          <button class="btn">View</button>
+          <button class="btn">Wish</button>
+          <button class="btn">Cart</button>
+        </div>
+      </div>
+      <div class="similar-item">
+        <img src="nestum.jpeg" alt="Nestum Madu">
+        <a href="#">Nestum Madu</a>
+        <div class="btn-group">
+          <button class="btn">View</button>
+          <button class="btn">Wish</button>
+          <button class="btn">Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  All images are copyright to their owners. This is a hypothetical site © 2026 Wanie Store
+</footer>
+
+</body>
+</html>

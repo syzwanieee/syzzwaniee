@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Registration</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="toplinks">
+        <a href="Lab5.html">My Account</a>
+        <a href="wishlist.html">Wish List</a>
+        <a href="cart.html">Shopping Cart</a>
+        <a href="checkout.html">Checkout</a>
+    </div>
+</div>
+
+<header>
+    <h1>Shoes Store</h1>
+</header>
+
+<nav>
+    <a href="Lab4.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="artworks.html">Art Works</a>
+    <a href="artists.html">Artists</a>
+</nav>
+
+<div class="container">
+
+<h2>Customer Registration</h2>
+
+<form action="success.html">
+
+<h3>1. User Info</h3>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <label>First Name</label>
+        <input type="text" required>
+    </div>
+
+    <div class="col">
+        <label>Last Name</label>
+        <input type="text" required>
+    </div>
+</div>
+
+<label>Email</label>
+<input type="email" class="full" placeholder="format for email is xxx@yyy.zzz" required>
+
+<div class="row">
+    <div class="col">
+        <label>Password</label>
+        <input type="password" placeholder="at least 8 characters" required>
+    </div>
+
+    <div class="col">
+        <label>Password Repeat</label>
+        <input type="password" placeholder="at least 8 characters" required>
+    </div>
+</div>
+
+<h3>2. Location</h3>
+<hr>
+
+<label>Address</label>
+<input type="text" class="full">
+
+<div class="row">
+    <div class="col">
+        <label>City</label>
+        <input type="text">
+    </div>
+
+    <div class="col small">
+        <label>State</label>
+        <input type="text">
+    </div>
+
+    <div class="col small">
+        <label>Zip</label>
+        <input type="text">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <label>Phone</label>
+        <input type="text" placeholder="NNN-NNN-NNNN">
+    </div>
+
+    <div class="col">
+        <label>Country</label>
+        <select>
+            <option>Canada</option>
+            <option>USA</option>
+            <option>Malaysia</option>
+        </select>
+    </div>
+</div>
+
+<label>Continent</label>
+<div class="continent-group">
+    <label class="radioItem"><input type="radio" name="cont"> North America</label>
+    <label class="radioItem"><input type="radio" name="cont"> Europe</label>
+    <label class="radioItem"><input type="radio" name="cont"> South America</label>
+</div>
+
+<h3>3. Personal Details</h3>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <label>Birth Day</label>
+        <input type="date">
+    </div>
+
+    <div class="col">
+        <label>Favorite Color</label>
+        <input type="color" class="colorBox">
+    </div>
+</div>
+
+<label>Interest In Art</label>
+<div class="range-group">
+    <span>Minimal</span>
+    <input type="range" class="rangeFull">
+    <span>Love it!</span>
+</div>
+
+<h3>4. All Done</h3>
+<hr>
+
+<div class="agree">
+    <input type="checkbox" required>
+    I agree to the <a href="#">Terms of the Site</a>
+</div>
+
+<br>
+
+<button type="submit" class="signupBtn">✔ Sign me up!</button>
+
+</form>
+</div>
+
+<footer>
+All images are copyright to their owners.
+This is just a hypothetical site © 2014 Copyright Art Store
+</footer>
+
+</body>
+</html>

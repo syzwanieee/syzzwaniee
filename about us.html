@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | Meet The Creators</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a3863;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 45px;
+            height: 45px;
+            background: #ffffff;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .back-button i {
+            font-size: 18px;
+            color: #0a3863;
+        }
+
+        .back-button:hover {
+            background: #3498db;
+            transform: translateX(-3px);
+        }
+
+        .back-button:hover i {
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .subtitle {
+            color: #3498db;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin: 10px 0 20px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .intro-text {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        .team-grid {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .profile-card {
+            background: #a2e6ff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            width: 300px;
+            transition: all 0.3s ease;
+            border-top: 5px solid transparent;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-15px);
+            border-top: 5px solid #199bd3;
+        }
+
+        .image-container {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #000000;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .role {
+            color: #3498db;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* ICON WARNA HITAM */
+        .social-links a {
+            color: #000000;
+            font-size: 1.4rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.15);
+        }
+
+        .social-links a:hover .fa-instagram { color: #e1306c; }
+        .social-links a:hover .fa-whatsapp { color: #00a03b; }
+    </style>
+</head>
+
+<body>
+
+<a href="index.html" class="back-button">
+    <i class="fas fa-arrow-left"></i>
+</a>
+
+<section class="about-section">
+    <div class="container">
+        <span class="subtitle">OUR STORY</span>
+        <h1>MEET THE CREATORS</h1>
+
+        <p class="intro-text">
+            We are a passionate team dedicated to building intuitive and engaging web experiences. 
+            Together, we transform ideas into digital realities.
+        </p>
+
+        <div class="team-grid">
+
+            <!-- Wanie -->
+            <div class="profile-card">
+                <div class="image-container">
+                    <a href="waniee.jpeg" target="_blank">
+                        <img src="waniee.jpeg" alt="Wanie">
+                    </a>
+                </div>
+
+                <h3>NURSYAZWANIE BINTI JAIMI</h3>
+                <p class="role">Main Page Creator</p>
+                <p class="description">
+                    Crafts the welcoming gateway, ensuring every user landing 
+                    on the home page feels right at home.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/_nrsyzwnii.__?igsh=dDZqbWt4Nms2dHJ2&utm_source=qr" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/60192922251" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Najjwa -->
+            <div class="profile-card">
+                <div class="image-container">
+                    <a href="Najjwa.jpeg" target="_blank">
+                        <img src="Najjwa.jpeg" alt="Najjwa">
+                    </a>
+                </div>
+
+                <h3>NAJJWA AQILLA BINTI MOHD KHAIRI</h3>
+                <p class="role">About Us Page Creator</p>
+                <p class="description">
+                    Defines our identity, telling our story with clarity and style 
+                    to build lasting trust with our audience.
+                </p>
+
+                <div class="social-links">
+                    <a href="https://instagram.com/username" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/60123456789" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration form</title>
+    <style>
+        /* --- CODE RESET & BASE --- */
+        html, body, header, footer, nav, h1, h2, h3, ul, li, div, p, label {
+            margin: 0; padding: 0; border: 0; font-size: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e7e7e7;
+            color: #333;
+        }
+        header, .divmainNavigationRow, footer { width: 900px; margin: 0 auto; }
+
+        /* --- HEADER & NAV --- */
+        .divtopHeaderRow { background-color: #222; height: 30px; text-align: right; line-height: 30px; }
+        .divtopHeaderRow a { color: #999; margin-right: 20px; text-decoration: none; font-size: 12px; }
+        h1 { font-size: 50px; font-weight: bold; padding: 10px 0; background-color: #fff; width: 900px; margin: 0 auto;}
+        .divmainNavigationRow { background-color: #f8f8f8; border: 1px solid #e7e7e7; height: 40px; line-height: 40px; }
+        .divmainNavigationRow li { display: inline; margin: 0 15px; }
+        .divmainNavigationRow a { color: #777; font-weight: bold; text-decoration: none; }
+
+        /* --- MAIN CONTENT --- */
+        main { width: 860px; margin: 10px auto; background-color: #fff; padding: 20px; border: 1px solid #e7e7e7; }
+        h3 { margin-top: 25px; padding-bottom: 5px; border-bottom: 1px solid #e7e7e7; margin-bottom: 15px; }
+        .regTable { width: 60%; }
+        label { font-weight: bold; font-size: 13px; }
+        input[type="text"], input[type="password"], input[type="email"], select { 
+            border: 1px solid #ccc; padding: 4px; margin: 5px 0 10px 0; 
+        }
+
+        /* --- GAYA BUTANG BIRU --- */
+        .fancyBtn {
+            background-color: #bddbfa;
+            border: 1.5px solid #555;
+            padding: 8px 15px;
+            display: inline-flex;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 0;
+        }
+        .btn-tick {
+            width: 28px;
+            height: auto;
+            margin-right: 12px;
+        }
+        .btn-text {
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .fancyBtn:hover {
+            background-color: #a2c9f0;
+        }
+
+        /* --- FOOTER --- */
+        footer { background-color: #222; color: #999; text-align: center; padding: 10px 0; margin-top: 20px; }
+
+        /* --- PERSONAL DETAILS INPUTS --- */
+        input[type="date"], input[type="color"], input[type="range"] {
+            height: 25px;
+            max-width: 150px;
+            font-size: 12px;
+        }
+        input[type="range"] { width: 150px; }
+    </style>
+</head>
+<body>
+
+<div class="divtopHeaderRow">
+    <a href="JS5.html">My Account</a>
+    <a href="#">Wish List</a>
+    <a href="#">Shopping Cart</a>
+    <a href="#">Checkout</a>
+</div>
+
+<header>
+    <h1>Wanie Store</h1>
+</header>
+
+<nav class="divmainNavigationRow">
+    <ul>
+        <li><a href="JS5.html">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Art Works</a></li>
+        <li><a href="#">Artists</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h2>Customer Registration</h2>
+
+    <form>
+        <h3>1. User Info</h3>
+        <table class="regTable">
+            <tr>
+                <td><label>First Name</label><br><input type="text"></td>
+                <td><label>Last Name</label><br><input type="text"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>Email</label><br>
+                    <input type="email" placeholder="format for email is xxx@yyy.zzz" style="width:95%;">
+                </td>
+            </tr>
+            <tr>
+                <td><label>Password</label><br><input type="password" placeholder="at least 8 characters"></td>
+                <td><label>Password Repeat</label><br><input type="password" placeholder="at least 8 characters"></td>
+            </tr>
+        </table>
+
+        <h3>2. Location</h3>
+        <table class="regTable">
+            <tr>
+                <td colspan="3"><label>Address</label><br><input type="text" style="width:95%;"></td>
+            </tr>
+            <tr>
+                <td><label>City</label><br><input type="text"></td>
+                <td><label>State</label><br><input type="text"></td>
+                <td><label>Zip</label><br><input type="text" style="width:50px;"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><label>Phone</label><br><input type="text" placeholder="NNN-NNN-NNNN"></td>
+                <td>
+                    <label>Country</label><br>
+                    <select>
+                        <option>Malaysia</option>
+                        <option>Canada</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <label>Continent</label><br>
+                    <input type="radio" name="continent"> North America<br>
+                    <input type="radio" name="continent" checked> Europe<br>
+                    <input type="radio" name="continent"> South America
+                </td>
+            </tr>
+        </table>
+
+        <h3>3. Personal Details</h3>
+        <table class="regTable">
+            <tr>
+                <td><label>Birth Day</label><br><input type="date"></td>
+                <td><label>Favorite Color</label><br><input type="color"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <label>Interest In Art</label><br>
+                    Minimal <input type="range" class="rangeInput"> Love it!
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <h3>4. All Done</h3>
+        <div class="checkbox-row">
+            <input type="checkbox"> I agree to the <a href="#" style="color: blue; text-decoration: none;">Terms of the Site</a>
+        </div>
+        <br>
+
+        <button type="submit" class="fancyBtn">
+            <img src="tick.png" alt="tick" class="btn-tick">
+            <span class="btn-text">Sign me up!</span>
+        </button>
+    </form>
+</main>
+
+<footer>
+    All images are copyright to their owners © 2026 Wanie Store.
+</footer>
+
+</body>
+</html>
