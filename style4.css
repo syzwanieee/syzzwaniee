@@ -1,220 +1,238 @@
-/* Reset */
-html, body, header, footer, hgroup, nav, article, section, figure, figcaption,
-h1, h2, h3, ul, li, div, p, img {
+/* Reset Default */
+* {
     margin: 0;
     padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
+    box-sizing: border-box;
 }
 
-/* Body */
 body {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
-    color: #333333;
-    background-image: url("stucco.png");
-    line-height: 1.428571429;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.5;
 }
 
-/* Header */
-header {
+/* Container utama */
+header, footer {
     width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 /* Top Header */
 #topHeaderRow {
-    background-color: #222222;
-    font-size: 0.9em;
-    height: 3em;
-    text-align: center;
-    line-height: 3em;
-    padding-right: 1em;
+    background-color: #222;
+    height: 35px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#topHeaderRow ul li {
+    display: inline;
+    line-height: 35px;
+    margin-left: 15px;
 }
 
 #topHeaderRow a {
-    color: #999999;
-    margin-right: 2em;
-}
-
-/* List */
-ul {
-    list-style: none;
-}
-
-li {
-    display: inline;
-}
-
-li a {
+    color: #999;
     text-decoration: none;
+    font-size: 12px;
 }
 
-/* Heading 1 */
+/* Logo/Title */
 h1 {
-    font-size: 4em;
-    font-weight: bold;
+    font-family: serif;
+    font-size: 45px;
+    padding: 20px 0;
+    background-color: #fff;
+    padding-left: 10px;
 }
 
-/* Navigation */
+/* Navigasi */
 #mainNavigationRow {
-    background-color: #f8f8f8;
-    height: 3em;
-    border: 1pt solid #e7e7e7;
-    line-height: 3em;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+#mainNavigationRow ul li {
+    display: inline;
+    margin-right: 25px;
 }
 
 #mainNavigationRow a {
-    color: #777777;
+    color: #666;
+    text-decoration: none;
     font-weight: bold;
-    margin-left: 1em;
-    margin-right: 2em;
 }
 
-/* Main */
+/* Main Content Area */
 main {
-    width: 880px;
-    margin: 1em auto;
-    background-color: #ffffff;
-    padding: 10px;
-    border: 1pt solid #e7e7e7;
+    width: 900px;
+    margin: 10px auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    overflow: hidden;
 }
 
-/* Heading 2 */
 h2 {
-    font-size: 1.75em;
+    font-size: 24px;
+    margin-bottom: 5px;
 }
 
-/* Heading 3 */
-h3 {
-    font-size: 1.25em;
-    border-bottom: 1pt solid #e7e7e7;
-    margin-top: 1em;
-    margin-bottom: 0.75em;
+.author-link {
+    font-size: 13px;
+    margin-bottom: 20px;
 }
 
-/* Figure */
-main figure {
+/* Layout Flex untuk Gambar & Info */
+.product-container {
+    display: flex;
+    gap: 20px;
+}
+
+figure img {
     width: 300px;
-    float: left;
-    margin-top: 1em;
+    border: 1px solid #eee;
 }
 
-/* Info */
 #info {
-    margin-left: 310px;
-    margin-top: 1em;
+    flex: 1;
 }
 
-/* Price */
-.price {
-    font-size: 1.1em;
+.description {
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+/* Link Biru Spesifik */
+.blue-link {
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+.blue {
+    color: #0000EE;
+    text-decoration: none;
     font-weight: bold;
-    color: red;
-    margin-top: 1em;
 }
 
-/* Buttons */
+.blue-link:hover {
+    text-decoration: none;
+}
+
+/* Harga */
+.price {
+    color: #CC0000;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* Buttons Container */
 #buttons {
-    border: 1pt solid #e7e7e7;
-    margin-top: 1em;
-    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 #buttons button {
-    width: 250px;
-    height: 3em;
-    margin-left: 1em;
-    line-height: 3em;
+    flex: 1;
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #5e5e5e;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover */
 }
 
-#buttons a {
-    text-decoration: none;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: black;
+/* Hover effect for main product buttons */
+#buttons button:hover {
+    background-color: #bebebe;
+    color: rgb(0, 0, 0);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Product Details Table */
-.product-details {
-    margin-top: 20px;
-    border-top: 1pt solid #e7e7e7;
-    padding-top: 10px;
+/* Table */
+.product-details h3 {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
 }
 
-.product-details table {
+table {
     width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9em;
+    font-size: 13px;
 }
 
-.product-details th {
+th {
     text-align: left;
-    width: 35%;
-    padding: 4px 8px;
-    color: #555555;
+    width: 100px;
+    vertical-align: top;
+    padding: 3px 0;
 }
 
-.product-details td {
-    padding: 4px 8px;
-    color: #333333;
-}
-
-/* Similar Section */
+/* Similar Products Grid */
 #similar {
-    clear: left;
-    margin-top: 2em;
-    height: 250px;
+    margin-top: 30px;
+    clear: both;
+}
+
+#similar h3 {
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 15px;
+}
+
+.similar-grid {
+    display: flex;
+    gap: 10px;
 }
 
 .box {
-    width: 180px;
-    padding: 0.5em;
-    border: 1pt solid #e7e7e7;
-    margin-right: 1em;
-    float: left;
+    width: 25%;
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: center;
 }
 
 .box img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 10px;
 }
 
-/* Action Buttons (Box Style) */
-.actions {
-    text-align: center;
-    margin-top: 0.8em;
+.actions button {
+    font-size: 10px;
+    margin: 2px;
+    padding: 2px 5px;
+    background-color: #eee;
+    border: 1px solid #585858;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.actions a {
-    display: inline-block;
-    padding: 6px 12px;
-    margin: 4px 3px;
-    background-color: #e8e8e8;
-    color: #000000;
-    text-decoration: none;
-    font-size: 0.8em;
-    border-radius: 4px;
-    transition: 0.3s;
-}
-
-.actions a:hover {
-    background-color: #bababa;
+/* Hover effect for similar products buttons */
+.actions button:hover {
+    background-color: #d8d8d8;
+    color: rgb(0, 0, 0);
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 /* Footer */
 footer {
-    clear: left;
-    width: 900px;
-    height: 3em;
-    margin: 1em auto;
-    border: 1pt solid #e7e7e7;
-    background-color: #222222;
-    color: #999999;
-    font-size: 0.9em;
+    background-color: #222;
+    color: #999;
     text-align: center;
-    line-height: 3em;
+    padding: 15px;
+    font-size: 11px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
