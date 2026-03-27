@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Share Your Travels</title>
+  <link rel="stylesheet" href="JS-7.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+  <h1>Share Your Travels</h1>
+  <div class="menu-icon">
+    &#9776; <!-- simbol hamburger menu -->
+  </div>
+</header>
+
+
+  <main>
+    <!-- Gambar utama -->
+    <div class="main-image">
+      <img id="displayedImage" src="masjid.jpg" alt="Castle">
+      <p id="caption" class="caption">Mosque</p>
+    </div>
+
+    <!-- Thumbnail gallery -->
+    <div class="thumbnail-container">
+      <img src="masjid.jpg" alt="Castle" data-full="masjid.jpg" data-caption="Mosque">
+      <img src="trengganu.webp" alt="Town" data-full="trengganu.webp" data-caption="Town">
+      <img src="kl" alt="Building" data-full="kl" data-caption="Building">
+      <img src="kk.webp" alt="Mountain" data-full="kk.webp" data-caption="Mountain">
+      <img src="sarawak.jpg" alt="City" data-full="sarawak.jpg" data-caption="City">
+    </div>
+  </main>
+
+  <script>
+    // Demo addEventListener
+    const displayedImage = document.getElementById('displayedImage');
+    const caption = document.getElementById('caption');
+    const thumbnails = document.querySelectorAll('.thumbnail-container img');
+
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        displayedImage.src = thumb.dataset.full;
+        caption.textContent = thumb.dataset.caption;
+      });
+    });
+  </script>
+</body>
+</html>

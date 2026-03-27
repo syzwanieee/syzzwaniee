@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(168, 36, 168);
+  padding: 100px;
+  font-size: 1.4rem;
+}
+
+.tajuk {
+  text-align: center;   /* centerkan tajuk */
+  font-size: 2.5rem;    /* besar sikit */
+  margin-bottom: 30px;  /* jarak bawah tajuk */
+  color: white;         /* ikut tema background */
+}
+
+.utama {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* kiri besar, kanan kecil */
+  gap: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+
+.beli {
+  background-color: rgb(132, 206, 238);
+  border-radius: 3px;
+  padding: 5px 60px;
+  transition: .2s;
+  outline: none;
+  border: none;
+}
+
+.beli:hover {
+  cursor: pointer;
+  background-color: rgb(155, 222, 239);
+}
+
+.buang {
+  background-color: rgb(116, 215, 248);
+  border-radius: 3px;
+  padding: 5px 60px;
+  transition: .2s;
+  outline: none;
+  border: none;
+}
+
+.buang:hover {
+  cursor: pointer;
+  background-color: rgb(155, 222, 239);
+}
+
+.pertama {
+  background-color: rgb(234, 110, 234);
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.kedua {
+  background-color: rgb(156, 48, 202);
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.kandungan-kedua {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-items: center;
+}
+
+.jumlah {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;   /* jarakkan ke bawah */
+  align-items: center;
+}
+
+.bold {
+  font-weight: bold;
+  text-align: center; /* centerkan harga */
+}

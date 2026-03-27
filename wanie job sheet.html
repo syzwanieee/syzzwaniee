@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WANIE JOB SHEET</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+
+<!-- Link external CSS -->
+<link rel="stylesheet" href="waniejobsheet.css">
+</head>
+
+<body>
+
+<h1>WANIE JOB SHEET</h1>
+
+<p id="progressText">Progress: 0% completed</p>
+
+<div class="sheet-container">
+  <a href="JS 1.html" class="sheet-box">JOB SHEET 1</a>
+  <a href="JS 2.html" class="sheet-box">JOB SHEET 2</a>
+  <a href="JS 3.html" class="sheet-box">JOB SHEET 3</a>
+  <a href="JS-5.html" class="sheet-box">JOB SHEET 4</a>
+  <a href="JS-4.html" class="sheet-box">JOB SHEET 5</a>
+  <a href="JS-6.html" class="sheet-box">JOB SHEET 6</a>
+  <a href="JS-7.html" class="sheet-box">JOB SHEET 7</a>
+  <a href="JS-8.html" class="sheet-box">JOB SHEET 8</a>
+  <a href="jobsheet9.html" class="sheet-box">JOB SHEET 9</a>
+  <a href="jobsheet10.html" class="sheet-box">JOB SHEET 10</a>
+  <a href="jobsheet11.html" class="sheet-box">JOB SHEET 11</a>
+  <a href="jobsheet12.html" class="sheet-box">JOB SHEET 12</a>
+  <a href="jobsheet13.html" class="sheet-box">JOB SHEET 13</a>
+  <a href="jobsheet14.html" class="sheet-box">JOB SHEET 14</a>
+  <a href="add to cart.html" class="sheet-box">JOB SHEET EXTRA</a>
+</div>
+
+<a href="next page.html" class="back-btn">Back</a>
+
+<!-- JS BERSAMA HTML -->
+<script>
+// Ambil semua job sheet
+const sheets = document.querySelectorAll('.sheet-box');
+const totalSheets = sheets.length;
+
+// Tetapkan berapa job sheet siap (ubah ikut keadaan)
+const completedSheets = 8;
+
+let currentCompleted = 0;
+
+// Fungsi update percent
+function updateProgress() {
+  const percent = Math.round((currentCompleted / totalSheets) * 100);
+  document.getElementById('progressText').innerText = `Progress: ${percent}% completed`;
+}
+
+// Animasi mark siap satu persatu
+const interval = setInterval(() => {
+  if(currentCompleted >= completedSheets){
+    clearInterval(interval);
+  } else {
+    sheets[currentCompleted].classList.add('completed');
+    currentCompleted++;
+    updateProgress();
+  }
+}, 300);
+</script>
+
+</body>
+</html>

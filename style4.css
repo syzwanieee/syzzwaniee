@@ -1,0 +1,220 @@
+/* Reset */
+html, body, header, footer, hgroup, nav, article, section, figure, figcaption,
+h1, h2, h3, ul, li, div, p, img {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+/* Body */
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #333333;
+    background-image: url("stucco.png");
+    line-height: 1.428571429;
+}
+
+/* Header */
+header {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Top Header */
+#topHeaderRow {
+    background-color: #222222;
+    font-size: 0.9em;
+    height: 3em;
+    text-align: center;
+    line-height: 3em;
+    padding-right: 1em;
+}
+
+#topHeaderRow a {
+    color: #999999;
+    margin-right: 2em;
+}
+
+/* List */
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+}
+
+li a {
+    text-decoration: none;
+}
+
+/* Heading 1 */
+h1 {
+    font-size: 4em;
+    font-weight: bold;
+}
+
+/* Navigation */
+#mainNavigationRow {
+    background-color: #f8f8f8;
+    height: 3em;
+    border: 1pt solid #e7e7e7;
+    line-height: 3em;
+}
+
+#mainNavigationRow a {
+    color: #777777;
+    font-weight: bold;
+    margin-left: 1em;
+    margin-right: 2em;
+}
+
+/* Main */
+main {
+    width: 880px;
+    margin: 1em auto;
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1pt solid #e7e7e7;
+}
+
+/* Heading 2 */
+h2 {
+    font-size: 1.75em;
+}
+
+/* Heading 3 */
+h3 {
+    font-size: 1.25em;
+    border-bottom: 1pt solid #e7e7e7;
+    margin-top: 1em;
+    margin-bottom: 0.75em;
+}
+
+/* Figure */
+main figure {
+    width: 300px;
+    float: left;
+    margin-top: 1em;
+}
+
+/* Info */
+#info {
+    margin-left: 310px;
+    margin-top: 1em;
+}
+
+/* Price */
+.price {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: red;
+    margin-top: 1em;
+}
+
+/* Buttons */
+#buttons {
+    border: 1pt solid #e7e7e7;
+    margin-top: 1em;
+    padding: 10px;
+}
+
+#buttons button {
+    width: 250px;
+    height: 3em;
+    margin-left: 1em;
+    line-height: 3em;
+}
+
+#buttons a {
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: black;
+}
+
+/* Product Details Table */
+.product-details {
+    margin-top: 20px;
+    border-top: 1pt solid #e7e7e7;
+    padding-top: 10px;
+}
+
+.product-details table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+}
+
+.product-details th {
+    text-align: left;
+    width: 35%;
+    padding: 4px 8px;
+    color: #555555;
+}
+
+.product-details td {
+    padding: 4px 8px;
+    color: #333333;
+}
+
+/* Similar Section */
+#similar {
+    clear: left;
+    margin-top: 2em;
+    height: 250px;
+}
+
+.box {
+    width: 180px;
+    padding: 0.5em;
+    border: 1pt solid #e7e7e7;
+    margin-right: 1em;
+    float: left;
+}
+
+.box img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Action Buttons (Box Style) */
+.actions {
+    text-align: center;
+    margin-top: 0.8em;
+}
+
+.actions a {
+    display: inline-block;
+    padding: 6px 12px;
+    margin: 4px 3px;
+    background-color: #e8e8e8;
+    color: #000000;
+    text-decoration: none;
+    font-size: 0.8em;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.actions a:hover {
+    background-color: #bababa;
+}
+
+/* Footer */
+footer {
+    clear: left;
+    width: 900px;
+    height: 3em;
+    margin: 1em auto;
+    border: 1pt solid #e7e7e7;
+    background-color: #222222;
+    color: #999999;
+    font-size: 0.9em;
+    text-align: center;
+    line-height: 3em;
+}

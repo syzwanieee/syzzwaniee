@@ -1,0 +1,184 @@
+/* ================= RESET ================= */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+}
+
+/* ================= VIDEO BACKGROUND ================= */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ================= BODY CONTENT ================= */
+body > *:not(.bg-video) {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================= ANIMATION KEYFRAMES ================= */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= TITLE ================= */
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 5vw;
+  color: #f7eaff;
+  text-align: center;
+  margin: 20px 0;
+  text-shadow: none;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+/* ================= CONTAINER ================= */
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-height: 70vh;
+  overflow: hidden;
+}
+
+/* ================= BOX ================= */
+.box {
+  background: rgba(0,0,0,0.85);
+  padding: 30px;
+  border-radius: 24px;
+  width: 260px;
+  text-align: center;
+  box-shadow: none;
+  backdrop-filter: blur(5px);
+  transition: transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+/* Animation delay untuk cascade effect */
+.box:nth-child(1) { animation-delay: 0.3s; }
+.box:nth-child(2) { animation-delay: 0.5s; }
+
+/* ================= BOX TITLE ================= */
+.box h2 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* ================= IMAGE ================= */
+.love-img {
+  width: 150px;
+  height: 150px;
+  margin: 15px auto 20px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.love-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================= BUTTONS ================= */
+.job-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 28px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1.5px solid rgba(190,80,255,0.7);
+  transition: 0.35s ease;
+}
+
+.job-btn:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 25px rgba(190,80,255,0.8),
+    0 0 45px rgba(120,180,255,0.7);
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideUp 0.8s ease-out forwards;
+  animation-delay: 0.7s;
+}
+
+.back-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border: 1px solid rgba(190,80,255,0.7);
+  transition: 0.35s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 25px rgba(190,80,255,0.8),
+    0 0 45px rgba(120,180,255,0.7);
+}
+
+/* ================= RESPONSIVE ================= */
+@media screen and (max-width: 768px) {
+  h1 { font-size: 6vw; }
+  .box-container {
+    flex-direction: column;   /* stack ke bawah */
+    align-items: center;
+    max-height: none;         /* buang limit tinggi */
+  }
+  .box { width: 80%; padding: 20px; }
+  .box h2 { font-size: 1rem; }
+  .love-img { width: 120px; height: 120px; }
+  .job-btn, .back-btn { padding: 8px 20px; }
+}
+
+@media screen and (max-width: 480px) {
+  h1 { font-size: 8vw; }
+  .box-container {
+    flex-direction: column;   /* stack ke bawah */
+    align-items: center;
+    gap: 20px;                /* jarak antara box */
+  }
+  .box { width: 90%; padding: 15px; }
+  .box h2 { font-size: 0.9rem; }
+  .love-img { width: 100px; height: 100px; }
+  .job-btn, .back-btn { padding: 6px 16px; font-size: 0.9rem; }
+}

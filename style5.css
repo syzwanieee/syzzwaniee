@@ -1,0 +1,189 @@
+/* ===== BODY ===== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #e6e6e6;
+}
+
+/* ===== TOP BAR ===== */
+.topbar {
+    background-color: #222;
+    padding: 8px 0;
+}
+
+.toplinks {
+    width: 1000px;
+    margin-left: 40px;
+    text-align: right;
+}
+
+.toplinks a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+}
+
+.toplinks a:hover {
+    color: white;
+}
+
+/* ===== HEADER ===== */
+header {
+    background-color: #f3f3f3;
+    padding: 25px 40px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin: 0;
+    color: #333;
+}
+
+/* ===== NAVIGATION ===== */
+nav {
+    background-color: #dddddd;
+    padding: 10px 40px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+nav a {
+    text-decoration: none;
+    margin-right: 25px;
+    color: #444;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* ===== FORM CONTAINER ===== */
+.container {
+    width: 900px;
+    margin: 30px 40px;
+    background-color: #f8f8f8;
+    border: 1px solid #cccccc;
+    padding: 25px 30px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+/* ===== TITLE ===== */
+h2 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #333;
+}
+
+/* ===== SECTION TITLE ===== */
+h3 {
+    margin-top: 25px;
+    color: #333;
+}
+
+/* ===== HR LINE ===== */
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 5px 0 15px 0;
+}
+
+/* ===== LABEL ===== */
+label {
+    font-weight: bold;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 3px;
+}
+
+/* ===== ROW LAYOUT ===== */
+.row {
+    display: flex;
+    gap: 40px; /* jarak antara column */
+    margin-bottom: 10px;
+}
+
+/* ===== COLUMN ===== */
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== SIZE KHAS UNTUK CITY / STATE / ZIP ===== */
+.col input {
+    padding: 4px;
+    font-size: 12px;
+}
+
+/* City lebih panjang */
+.row .col:first-child input {
+    width: 200px;
+}
+
+/* State */
+.small {
+    width: 120px;
+}
+
+/* Zip ada jarak dari State */
+.row .small + .small {
+    margin-left: 30px;
+}
+
+/* ===== INPUT UMUM ===== */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+    width: 200px;
+    padding: 4px;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.full {
+    width: 400px;
+}
+
+/* ===== RANGE ===== */
+.range-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rangeFull {
+    width: 300px;
+}
+
+/* ===== CHECKBOX ===== */
+.agree {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+/* ===== BUTTON ===== */
+.signupBtn {
+    background-color: #bddbfa;
+    border: 1px solid #7da7d9;
+    padding: 6px 15px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.signupBtn:hover {
+    background-color: #a5c9f5;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 12px;
+    font-size: 12px;
+    margin-top: 40px;
+}

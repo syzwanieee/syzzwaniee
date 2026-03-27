@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/5864cf6930.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="add to cart.css">
+  <title>Add to Cart</title>
+</head>
+<body>
+  <!-- Tajuk -->
+  <h1 class="tajuk">Market Syzwanie</h1>
+
+  <div class="utama">
+    <!-- Kotak Pertama -->
+    <div class="pertama">
+      <table>
+        <tr>
+          <th>Barang</th>
+          <th>Harga</th>
+        </tr>
+        <tr>
+          <td>Blouse Hitam</td>
+          <td>RM 21.00</td>
+          <td>
+            <button class="beli" onclick="tambahData({nama: 'Blouse Hitam', harga: 21})">
+              <i class="fa-solid fa-bag-shopping"></i> Beli
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Bawal Curve</td>
+          <td>RM 12.00</td>
+          <td>
+            <button class="beli" onclick="tambahData({nama: 'Bawal Curve', harga: 12})">
+              <i class="fa-solid fa-bag-shopping"></i> Beli
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Long Skirt</td>
+          <td>RM 24.00</td>
+          <td>
+            <button class="beli" onclick="tambahData({nama: 'Long Skirt', harga: 24})">
+              <i class="fa-solid fa-bag-shopping"></i> Beli
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>T-Shirt Jersey</td>
+          <td>RM 26.00</td>
+          <td>
+            <button class="beli" onclick="tambahData({nama: 'T-Shirt Jersey', harga: 26})">
+              <i class="fa-solid fa-bag-shopping"></i> Beli
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>Shawl Chiffon</td>
+          <td>RM 19.00</td>
+          <td>
+            <button class="beli" onclick="tambahData({nama: 'Shawl Chiffon', harga: 19})">
+              <i class="fa-solid fa-bag-shopping"></i> Beli
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Kotak Kedua -->
+    <div class="kedua">
+      <!-- Troli kosong, JS akan isi -->
+      <div id="troli"></div>
+    </div>
+  </div>
+
+  <!-- File JS asing -->
+  <script src="addcart.js"></script>
+</body>
+</html>
