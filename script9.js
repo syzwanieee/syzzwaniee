@@ -1,37 +1,60 @@
-/* lab9.js */
 const tax_rate = 0.10;
 const shipping_threshold = 1000;
-var subtotal = 0;
+let subtotal = 0;
+let tax = 0;
+let shipping = 0;
+let grand = 0;
 
-/* Functions */
 function calculateTotal(q, p) { return q * p; }
 function calculateTax(s, r) { return s * r; }
 function calculateShipping(s, t) { return (s > t) ? 0 : 40; }
 function calculateGrandTotal(s, t, sh) { return s + t + sh; }
 
-function outputCurrency(num) {
-    document.write("RM" + num.toFixed(2));
+function renderCart() {
+    const cartBody = document.getElementById("cart-body");
+    cartBody.innerHTML = "";
+    subtotal = 0;
+
+    for (let i = 0; i < filenames.length; i++) {
+        let total = calculateTotal(quantities[i], prices[i]);
+        subtotal += total;
+
+        let row = `
+        <tr>
+            <td><img src="${filenames[i]}" alt="${titles[i]}"></td>
+            <td>${titles[i]}</td>
+            <td class="center">
+                <button onclick="decreaseQuantity(${i})">-</button>
+                <span id="qty-${i}">${quantities[i]}</span>
+                <button onclick="increaseQuantity(${i})">+</button>
+            </td>
+            <td class="right">RM${prices[i].toFixed(2)}</td>
+            <td class="right" id="total-${i}">RM${total.toFixed(2)}</td>
+        </tr>`;
+        cartBody.innerHTML += row;
+    }
+
+    tax = calculateTax(subtotal, tax_rate);
+    shipping = calculateShipping(subtotal, shipping_threshold);
+    grand = calculateGrandTotal(subtotal, tax, shipping);
+
+    document.getElementById("subtotal").innerText = "RM" + subtotal.toFixed(2);
+    document.getElementById("tax").innerText = "RM" + tax.toFixed(2);
+    document.getElementById("shipping").innerText = "RM" + shipping.toFixed(2);
+    document.getElementById("grand").innerText = "RM" + grand.toFixed(2);
 }
 
-function outputCartRow(file, title, quantity, price, total) {
-    document.write('<tr>');
-    // SAYA DAH BUANG "images/" KAT BAWAH NI SUPAYA GAMBAR LILY KELUAR
-    document.write('<td><img src="' + file + '" width="80" style="border:1px solid #ddd;"></td>');
-    document.write('<td>' + title + '</td>');
-    document.write('<td class="center">' + quantity + '</td>');
-    document.write('<td class="right">RM' + price.toFixed(2) + '</td>');
-    document.write('<td class="right">RM' + total.toFixed(2) + '</td>');
-    document.write('</tr>');
+function increaseQuantity(index) {
+    quantities[index]++;
+    renderCart();
 }
 
-/* Loop data */
-for (var i = 0; i < filenames.length; i++) {
-    let total = calculateTotal(quantities[i], prices[i]);
-    subtotal += total;
-    outputCartRow(filenames[i], titles[i], quantities[i], prices[i], total);
+function decreaseQuantity(index) {
+    if (quantities[index] > 0) {
+        quantities[index]--;
+        renderCart();
+    }
 }
 
-var tax = calculateTax(subtotal, tax_rate);
-var shipping = calculateShipping(subtotal, shipping_threshold);
-var grand = calculateGrandTotal(subtotal, tax, shipping);
-
+// Initial render
+window.onload = renderCart;
