@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Art Work Details</title>
+  <link rel="stylesheet" href="Style8.css">
+</head>
+<body>
+  <h2>Edit Art Work Details</h2>
+  <form id="artForm">
+    <label>Title <span class="required">!</span>
+      <input type="text" id="title" name="title">
+    </label>
+
+    <label>Description <span class="required">!</span>
+      <input id="description" name="description"></input>
+    </label>
+
+    <label>Genre:
+      <select id="genre" name="genre">
+        <option value="">Choose genre</option>
+        <option value="Abstract">Abstract</option>
+        <option value="Realism">Realism</option>
+        <option value="Impressionism">Impressionism</option>
+      </select>
+    </label>
+
+    <label>Subject:
+      <select id="subject" name="subject">
+        <option value="">Choose subject</option>
+        <option value="Landscape">Landscape</option>
+        <option value="Portrait">Portrait</option>
+        <option value="Still Life">Still Life</option>
+      </select>
+    </label>
+
+    <label>Medium:
+      <input type="text" id="medium" name="medium">
+    </label>
+
+    <label>Year <span class="required">!</span>
+      <input type="text" id="year" name="year">
+    </label>
+
+    <label>Museum:
+      <input type="text" id="museum" name="museum">
+    </label>
+
+    <fieldset>
+      <legend>Type</legend>
+      <label><input type="radio" name="type" value="Painting" checked> Painting</label>
+      <label><input type="radio" name="type" value="Sculpture"> Sculpture</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Image Creative Commons Specification</legend>
+      <label><input type="checkbox" name="cc" value="Attribution"> Attribution</label>
+      <label><input type="checkbox" name="cc" value="Noncommercial"> Noncommercial</label>
+      <label><input type="checkbox" name="cc" value="No Derivative Works"> No Derivative Works</label>
+      <label><input type="checkbox" name="cc" value="Share Alike"> Share Alike</label>
+    </fieldset>
+
+    <div class="buttons">
+      <button type="submit" class="submit-btn">Submit</button>
+      <button type="reset" class="clear-btn">Clear Form</button>
+    </div>
+  </form>
+
+  <script>
+    document.getElementById("artForm").addEventListener("submit", function(event) {
+      let title = document.getElementById("title").value.trim();
+      let description = document.getElementById("description").value.trim();
+      let year = document.getElementById("year").value.trim();
+
+      if (title === "" || description === "" || year === "") {
+        alert("Please fill in all required fields: Title, Description, and Year.");
+        event.preventDefault(); // stop form submission
+      }
+    });
+  </script>
+</body>
+</html>
