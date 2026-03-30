@@ -37,15 +37,22 @@ body{
   overflow:hidden;
 }
 
-/* Menu list */
+/* Menu item jadi clickable full */
 .menu-item{
+  display:block;
   padding:10px;
   border-bottom:1px solid #ccc;
   font-weight:bold;
+  text-decoration:none;
+  color:black;
 }
 
 .menu-item:last-child{
   border-bottom:none;
+}
+
+.menu-item:hover{
+  background:#f2f2f2;
 }
 
 /* About section */
@@ -57,7 +64,7 @@ body{
   margin-top:0;
 }
 
-/* Profile info */
+/* Profile */
 .profile{
   display:flex;
   gap:10px;
@@ -68,11 +75,6 @@ body{
   width:70px;
   height:60px;
   border-radius:6px;
-}
-
-.profile p{
-  margin:0;
-  font-size:14px;
 }
 </style>
 </head>
@@ -85,17 +87,16 @@ body{
 
   <!-- Top Menu -->
   <div class="box">
-    <div class="menu-item">About</div>
-    <div class="menu-item">Blog</div>
-    <div class="menu-item">Contact</div>
+    <a href="https://ms.wikipedia.org/wiki/Aeril_Zafrel" class="menu-item">About</a>
+    <a href="https://www.instagram.com/aeril_zafrel/" class="menu-item">Blog</a>
+    <a href="https://www.thehandbook.com/celebrity/aeril-zafrel" class="menu-item">Contact</a>
   </div>
 
   <!-- Second Menu -->
   <div class="box">
-    <div class="menu-item">Consulting Clinic</div>
-    <div class="menu-item">On Call</div>
-    <div class="menu-item">Development</div>
-    <div class="menu-item">O'Reilly Media, Inc.</div>
+    <a href="https://www.instagram.com/accounts/login/?next=%2Faeril_zafrel%2F&source=omni_redirect" class="menu-item">Media Sosial</a>
+    <a href="https://www.hmetro.com.my/rap/2021/03/685056/mula-dengan-suka-suka-kini-aeril-zafrel-dan-wawa-zainal-peniaga-berjaya" class="menu-item">Development</a>
+    <a href="https://www.google.com/search?sca_esv=81b363871d8cdea0&sxsrf=ANbL-n7EL4BLxGWt9vd_7CCiMxwe2yXbhA:1774838173767&udm=2&fbs=ADc_l-ap7stvr00rk74-Gk0uBnRrMkRon1wCybtKnWACD33GaN_ZiNVnTeJV9Un-0hOHZ5Bom-tsRnICjtw4pYhS5Nxur7PzqqLuTjmN3gpTRIG0FQWfFpAgnxVTYR0-T6syopI0aJRu4a8SffMEO73EXvmJXTGqADWPypZthXYs76EfJk0eAa8ZdP8Xt_Cv2ocs9vMyylq9CzPfGZz94fgH598aijisVA&q=aeril+zafrel&sa=X&ved=2ahUKEwjaioa3y8aTAxXSV3ADHda6D9QQtKgLegQIFBAB&biw=1396&bih=663&dpr=1.38" class="menu-item">Media, Inc.</a>
   </div>
 
   <!-- About Content -->
@@ -108,9 +109,10 @@ body{
     <div class="profile">
       <img src="aeril.jpeg" alt="profile">
     </div>
-      <p>
-        Aeril Zafrel actively contributes to brand development and uses social media as a platform to promote products, share business updates, and engage with customers.
-      </p>
+
+    <p>
+      Aeril Zafrel actively contributes to brand development and uses social media as a platform to promote products, share business updates, and engage with customers.
+    </p>
   </div>
 
 </div>
