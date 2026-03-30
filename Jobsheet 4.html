@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="ms">
 <head>
-    <title>Shoes Store</title>
+    <meta charset="UTF-8">
+    <title>Shoes Store - Product Display</title>
     <link rel="stylesheet" href="style4.css">
 </head>
 <body>
 
 <header>
-
-    <!-- Top Header Row -->
     <div id="topHeaderRow">
         <ul>
             <li><a href="Jobsheet 5.html">My Account</a></li>
@@ -18,123 +17,110 @@
         </ul>
     </div>
 
-    <!-- Store Name -->
     <h1>Shoes Store</h1>
 
-    <!-- Main Navigation -->
-    <div id="mainNavigationRow">
+    <nav id="mainNavigationRow">
         <ul>
             <li><a href="#">Sport Shoes</a></li>
             <li><a href="#">Heels</a></li>
             <li><a href="#">Slippers</a></li>
             <li><a href="#">Boots</a></li>
         </ul>
-    </div>
-
+    </nav>
 </header>
 
 <main>
-
     <h2>Sport Running Shoes</h2>
+    <p class="author-link">By <a href="https://www.nike.com/my/" class="blue-link">Nike Official Store</a></p>
 
-    <figure>
-        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" width="300" alt="Sport Shoes">
-        <figcaption>Comfortable Running Shoes</figcaption>
-    </figure>
+    <div class="product-container">
+        <figure>
+            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Sport Shoes">
+        </figure>
 
-    <div id="info">
-        <p>Lightweight and breathable sport shoes perfect for daily training and casual wear.</p>
+        <div id="info">
+            <p class="description">
+                The product appears, after unboxing, to be a high-performance replica of the marathon series. 
+                This design was inspired by Eliud Kipchoge's collection</a>. 
+                It was exhibited in the 2024 Sport Expo. 
+            </p>
 
-        <p class="price">RM 249.00</p>
+            <p class="price">RM 249.00</p>
 
-        <!-- Add to Cart & Buy Now Buttons -->
-        <div id="buttons">
-            <button><a href="shopping-cart.html">Add to Cart</a></button>
-            <button><a href="checkout.html">Buy Now</a></button>
-        </div>
+            <div id="buttons">
+                <button class="btn-wish"><a class="blue">Add to Wish List</a></button>
+                <button class="btn-cart"><a class="blue">Add to Shopping Cart</a></button>
+            </div>
 
-        <!-- Product Details Table -->
-        <div class="product-details">
-            <h3>Product Details</h3>
-            <table>
-                <tr>
-                    <th>Brand:</th>
-                    <td>Nike</td>
-                </tr>
-                <tr>
-                    <th>Type:</th>
-                    <td>Sport Running Shoes</td>
-                </tr>
-                <tr>
-                    <th>Material:</th>
-                    <td>Mesh, Rubber</td>
-                </tr>
-                <tr>
-                    <th>Sizes Available:</th>
-                    <td>38, 39, 40, 41, 42</td>
-                </tr>
-                <tr>
-                    <th>Color:</th>
-                    <td>Black / White / Red</td>
-                </tr>
-                <tr>
-                    <th>Gender:</th>
-                    <td>Unisex</td>
-                </tr>
-            </table>
+            <div class="product-details">
+                <h3>Product Details</h3>
+                <table>
+                    <tr>
+                        <th>Type:</th>
+                        <td>Sport Running Shoes</a></td>
+                    </tr>
+                    <tr>
+                        <th>Category:</th>
+                        <td>Athletic, Training</td>
+                    </tr>
+                    <tr>
+                        <th>Brand:</th>
+                        <td><a href="https://www.nike.com/my/" class="blue-link">Nike</a></td>
+                    </tr>
+                    <tr>
+                        <th>Store:</th>
+                        <td><a href="https://pavilion-bukitjalil.com/stores/nike" class="blue-link">Pavilion Bukit Jalil</a></td>
+                    </tr>
+                    <tr>
+                        <th>Material:</th>
+                        <td><a href="https://sewport.com/fabrics-directory/mesh-fabric" class="blue-link">Mesh</a>, <a href="https://en.wikipedia.org/wiki/Natural_rubber" class="blue-link">Rubber</a></td>
+                    </tr>
+                </table>
+            </div>
         </div>
     </div>
 
-    <!-- Similar Shoes Section -->
     <div id="similar">
-        <h3>More Shoes</h3>
+        <h3>Similar Products</h3>
+        
+        <div class="similar-grid">
+            <div class="box">
+                <img src="https://ladies-shop-fashion.myshopify.com/cdn/shop/products/product-image-1425040052.jpg?v=1597651207" alt="Heels">
+                <p><a href="https://sophie.co.ke/product/2022-women-pumps-sexy-pointed-toe-luxury-metal-high-heels-shoes-woman-spring-summer-women-party-wedding-shoes-high-heels-zapatos/" class="blue-link">Elegant Heels</a></p>
+                <div class="actions">
+                    <button>View</button> <button>Wish</button> <button>Cart</button>
+                </div>
+            </div>
 
-        <div class="box">
-            <img src="https://ladies-shop-fashion.myshopify.com/cdn/shop/products/product-image-1425040052.jpg?v=1597651207" width="150" alt="Elegant Heels">
-            <p>Elegant Heels</p>
-            <div class="actions">
-                <a href="#">View</a>
-                <a href="#">Wish</a>
-                <a href="#">Cart</a>
+            <div class="box">
+                <img src="https://images.meesho.com/images/products/437680578/pgahc_512.avif?width=512" alt="Slippers">
+                <p><a href="https://www.meesho.com/cozy-wear-extra-comfort-casual-stylish-black-sandal-and-slippers-for-men/p/78l0hu?srsltid=AfmBOoqCwQPTzF9rKpyWNO0ofikxSJDrHaAynf3GeLwIeIrNFY4AJGlB" class="blue-link">Casual Slippers</a></p>
+                <div class="actions">
+                    <button>View</button> <button>Wish</button> <button>Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://luccavudor.com/wp-content/uploads/2024/08/SHOES_0003_BELLUS-BLACK.jpg" alt="Boots">
+                <p><a href="https://luccavudor.com/boots/" class="blue-link">Leather Boots</a></p>
+                <div class="actions">
+                    <button>View</button> <button>Wish</button> <button>Cart</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="https://safetyhammer.com.my/wp-content/uploads/2024/12/Tanker-6.png" alt="Safety">
+                <p><a href="https://safetyhammer.com.my/products/safety-shoes/tanker-safety-shoes-2/" class="blue-link">Safety Shoes</a></p>
+                <div class="actions">
+                    <button>View</button> <button>Wish</button> <button>Cart</button>
+                </div>
             </div>
         </div>
-
-        <div class="box">
-            <img src="https://images.meesho.com/images/products/437680578/pgahc_512.avif?width=512" width="150" alt="Casual Slippers">
-            <p>Casual Slippers</p>
-            <div class="actions">
-                <a href="#">View</a>
-                <a href="#">Wish</a>
-                <a href="#">Cart</a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="https://luccavudor.com/wp-content/uploads/2024/08/SHOES_0003_BELLUS-BLACK.jpg" width="150" alt="Leather Boots">
-            <p>Leather Boots</p>
-            <div class="actions">
-                <a href="#">View</a>
-                <a href="#">Wish</a>
-                <a href="#">Cart</a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="https://safetyhammer.com.my/wp-content/uploads/2024/12/Tanker-6.png" width="150" alt="Safety Shoes">
-            <p>Safety Shoes</p>
-            <div class="actions">
-                <a href="#">View</a>
-                <a href="#">Wish</a>
-                <a href="#">Cart</a>
-            </div>
-        </div>
-
     </div>
-
 </main>
 
 <footer>
-    &copy; 2026 Shoes Store. All Rights Reserved.
+    All images are copyright to their owners. This is just a hypothetical site &copy; 2026 Shoes Store.
 </footer>
 
 </body>
