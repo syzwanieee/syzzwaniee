@@ -13,7 +13,7 @@ var titles = [
 ];
 
 // Array for quantities
-var quantities = [3, 1, 2];
+var quantities = [0, 0, 0];
 
 // Array for prices
 var prices = [80, 125, 75];
