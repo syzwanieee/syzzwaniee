@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Share Your Travels</title>
+  <link rel="stylesheet" href="style7.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+  <h1>Share Your Travels</h1>
+  <div class="menu-icon">&#9776;</div>
+</header>
+
+<main class="container">
+  
+  <!-- Main Image -->
+  <div class="main-image">
+    <img id="displayedImage" src="P.jpg" alt="Petronas Twin Towers">
+    <p id="caption" class="caption">Petronas Twin Towers</p>
+  </div>
+
+  <!-- Thumbnail Gallery -->
+  <div class="thumbnail-container">
+    <img src="P.jpg" data-full="P.jpg" data-caption="Petronas Twin Towers">
+    <img src="M.jpg" data-full="M.jpg" data-caption="Putra Mosque, Putrajaya">
+    <img src="S.jpg" data-full="S.jpg" data-caption="Sultan Abdul Samad Building">
+    <img src="I.jpg" data-full="I.jpg" data-caption="Istana Negara">
+    <img src="K.png" data-full="K.png" data-caption="Kek Lok Si Temple, Penang">
+  </div>
+
+</main>
+
+<script>
+const displayedImage = document.getElementById('displayedImage');
+const caption = document.getElementById('caption');
+const thumbnails = document.querySelectorAll('.thumbnail-container img');
+
+thumbnails.forEach(thumb => {
+  thumb.addEventListener('click', () => {
+    displayedImage.src = thumb.dataset.full;
+    caption.textContent = thumb.dataset.caption;
+  });
+});
+</script>
+
+</body>
+</html>
