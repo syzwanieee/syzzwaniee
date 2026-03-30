@@ -2,13 +2,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', Arial, Helvetica, sans-serif; /* font biasa */
-  background: #f2f2f2;   /* kelabu cair */
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
   color: #333;
   height: 100%;
   overflow-x: hidden;
 }
-
 
 /* HEADER */
 header {
@@ -16,7 +15,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 15px 20px;
-  background: #003366;         /* biru pekat */
+  background: #003366;
   color: #fff;
 }
 
@@ -24,7 +23,7 @@ header h1 {
   margin: 0;
   font-size: 2rem;
   font-weight: 400;
-  font-family: 'Pacifico', cursive; /* tajuk kekal berangkai */
+  font-family: 'Pacifico', cursive;
   letter-spacing: 1px;
 }
 
@@ -34,17 +33,30 @@ header h1 {
   cursor: pointer;
 }
 
+/* Kotak besar untuk semua gambar */
+.gallery-box {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff7a;            /* background putih */
+  border: 2px solid #ccc;      /* bingkai kelabu */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
 /* MAIN IMAGE */
 .main-image {
   text-align: center;
   margin: 20px auto;
   max-width: 500px;
   position: relative;
-  background: #f9f9f9;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  padding: 15px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
 }
+
 .main-image img {
   width: 100%;
   height: auto;
