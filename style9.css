@@ -21,8 +21,6 @@ div.title {
    text-transform: uppercase;
 }
 
-/*** Table Styles **/
-
 .table-fill {
   background: white;
   border-collapse: collapse;
@@ -34,7 +32,7 @@ div.title {
  
 th {
   color: white;
-  background: #EF6C00; /* Warna Oren mengikut gambar */
+  background: #EF6C00;
   border-bottom: 4px solid #9ea7af;
   font-size: 18px;
   font-weight: 500;
@@ -88,4 +86,20 @@ tr.totals td {
   color: #E65100;  
   font-weight: 700;
   font-size: 18px;
+}
+
+/* Styling untuk button */
+button {
+  background-color: #EF6C00;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  margin: 0 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #E65100;
 }
