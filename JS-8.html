@@ -1,82 +1,509 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-  <meta charset="UTF-8">
-  <title>Edit Art Work Details</title>
-  <link rel="stylesheet" href="JS-8.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Art Work Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            width: 650px;
+            background: white;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            background-color: #4d4d4d;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            margin: 0;
+            font-size: 18px;
+        }
+
+        form {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        input[type=text],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 13px;
+        }
+
+        textarea {
+            resize: vertical;
+            height: 60px;
+        }
+
+        select {
+            height: 34px;
+        }
+
+        .error-icon {
+            position: absolute;
+            right: 8px;
+            top: 32px;
+            background-color: #e91e63;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 18px;
+            font-weight: bold;
+            font-size: 12px;
+            display: none;
+            z-index: 10;
+        }
+
+        textarea + .error-icon {
+            top: 32px;
+        }
+
+        select + .error-icon {
+            top: 32px;
+        }
+
+        .two-columns {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .column {
+            flex: 1;
+            position: relative;
+        }
+
+        .type-box {
+            border: 1px solid #ccc;
+            padding: 12px;
+            background: white;
+            position: relative;
+        }
+
+        .type-box > label {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .radio-group {
+            margin-top: 5px;
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: normal;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        .radio-group input {
+            width: 16px;
+            height: 16px;
+        }
+
+        .cc-box {
+            border: 1px solid #ccc;
+            padding: 12px;
+            background: white;
+            position: relative;
+        }
+
+        .cc-box > label {
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .checkbox-group {
+            margin-top: 5px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: normal;
+            margin-bottom: 6px;
+            cursor: pointer;
+        }
+
+        .checkbox-group input {
+            width: 16px;
+            height: 16px;
+        }
+
+        .type-box .error-icon-box, .cc-box .error-icon-box {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            background-color: #e91e63;
+            color: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 18px;
+            font-weight: bold;
+            font-size: 12px;
+            display: none;
+        }
+
+        .error-field {
+            border: 2px solid red !important;
+            background-color: #ffe5e5 !important;
+        }
+
+        .type-box.error-border, .cc-box.error-border {
+            border: 2px solid red !important;
+            background-color: #ffe5e5 !important;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        button {
+            background-color: #ff9800;
+            color: black;
+            border: none;
+            padding: 8px 25px;
+            margin: 0 5px;
+            border-radius: 3px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #clearBtn {
+            background-color: #e0e0e0;
+            border: 1px solid #ccc;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
-  <h2>Edit Art Work Details</h2>
-  <form id="artForm">
-    <label>Title <span class="required">!</span>
-      <input type="text" id="title" name="title">
-    </label>
 
-    <label>Description <span class="required">!</span>
-      <textarea id="description" name="description"></textarea>
-    </label>
+<div class="container">
+    <h2>Edit Art Work Details</h2>
+    
+    <form id="artForm">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" id="title" name="title">
+            <span class="error-icon" id="titleIcon">!</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Description</label>
+            <textarea id="description" name="description"></textarea>
+            <span class="error-icon" id="descIcon">!</span>
+        </div>
+        
+        <div class="two-columns">
+            <!-- Genre - left column -->
+            <div class="column">
+                <label>Genre</label>
+                <select id="genre" name="genre">
+                    <option value="">Choose genre</option>
+                    <option value="Abstract">Abstract</option>
+                    <option value="Portrait">Portrait</option>
+                    <option value="Landscape">Landscape</option>
+                </select>
+                <span class="error-icon" id="genreIcon">!</span>
+            </div>
+            
+            <div class="column">
+                <div class="type-box" id="typeBox">
+                    <label>Type</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="type" id="painting" value="Painting"> Painting
+                        </label>
+                        <label>
+                            <input type="radio" name="type" id="sculpture" value="Sculpture"> Sculpture
+                        </label>
+                    </div>
+                    <span class="error-icon-box" id="typeIcon">!</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="two-columns">
+            <!-- Medium - left column -->
+            <div class="column">
+                <label>Medium</label>
+                <input type="text" id="medium" name="medium">
+                <span class="error-icon" id="mediumIcon">!</span>
+            </div>
+            
+            <div class="column">
+                <div class="cc-box" id="ccBox">
+                    <label>Image Creative Commons Specification</label>
+                    <div class="checkbox-group">
+                        <label>
+                            <input type="checkbox" id="attribution"> Attribution
+                        </label>
+                        <label>
+                            <input type="checkbox" id="noncommercial"> Noncommercial
+                        </label>
+                        <label>
+                            <input type="checkbox" id="noderivative"> No Derivative Works
+                        </label>
+                        <label>
+                            <input type="checkbox" id="sharealike"> Share Alike
+                        </label>
+                    </div>
+                    <span class="error-icon-box" id="ccIcon">!</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Subject</label>
+            <select id="subject" name="subject">
+                <option value="">Choose subject</option>
+                <option value="Nature">Nature</option>
+                <option value="People">People</option>
+                <option value="Urban">Urban</option>
+            </select>
+            <span class="error-icon" id="subjectIcon">!</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Year</label>
+            <input type="text" id="year" name="year" placeholder="YYYY">
+            <span class="error-icon" id="yearIcon">!</span>
+        </div>
+        
+        <div class="form-group">
+            <label>Museum</label>
+            <input type="text" id="museum" name="museum">
+            <span class="error-icon" id="museumIcon">!</span>
+        </div>
+        
+        <div class="buttons">
+            <button type="submit">Submit</button>
+            <button type="button" id="clearBtn">Clear Form</button>
+        </div>
+    </form>
+</div>
 
-    <label>Genre:
-      <select id="genre" name="genre">
-        <option value="">Choose genre</option>
-        <option value="Abstract">Abstract</option>
-        <option value="Realism">Realism</option>
-        <option value="Impressionism">Impressionism</option>
-      </select>
-    </label>
-
-    <label>Subject:
-      <select id="subject" name="subject">
-        <option value="">Choose subject</option>
-        <option value="Landscape">Landscape</option>
-        <option value="Portrait">Portrait</option>
-        <option value="Still Life">Still Life</option>
-      </select>
-    </label>
-
-    <label>Medium:
-      <input type="text" id="medium" name="medium">
-    </label>
-
-    <label>Year <span class="required">!</span>
-      <input type="text" id="year" name="year">
-    </label>
-
-    <label>Museum:
-      <input type="text" id="museum" name="museum">
-    </label>
-
-    <fieldset>
-      <legend>Type</legend>
-      <label><input type="radio" name="type" value="Painting" checked> Painting</label>
-      <label><input type="radio" name="type" value="Sculpture"> Sculpture</label>
-    </fieldset>
-
-    <fieldset>
-      <legend>Image Creative Commons Specification</legend>
-      <label><input type="checkbox" name="cc" value="Attribution"> Attribution</label>
-      <label><input type="checkbox" name="cc" value="Noncommercial"> Noncommercial</label>
-      <label><input type="checkbox" name="cc" value="No Derivative Works"> No Derivative Works</label>
-      <label><input type="checkbox" name="cc" value="Share Alike"> Share Alike</label>
-    </fieldset>
-
-    <div class="buttons">
-      <button type="submit" class="submit-btn">Submit</button>
-      <button type="reset" class="clear-btn">Clear Form</button>
-    </div>
-  </form>
-
-  <script>
-    document.getElementById("artForm").addEventListener("submit", function(event) {
-      let title = document.getElementById("title").value.trim();
-      let description = document.getElementById("description").value.trim();
-      let year = document.getElementById("year").value.trim();
-
-      if (title === "" || description === "" || year === "") {
-        alert("Please fill in all required fields: Title, Description, and Year.");
-        event.preventDefault(); // stop form submission
-      }
+<script>
+    const form = document.getElementById('artForm');
+    const clearBtn = document.getElementById('clearBtn');
+    
+    // Function to remove error styling and hide icons
+    function removeErrors() {
+        document.querySelectorAll('.error-field').forEach(el => el.classList.remove('error-field'));
+        document.querySelectorAll('.type-box, .cc-box').forEach(el => el.classList.remove('error-border'));
+        document.querySelectorAll('.error-icon, .error-icon-box').forEach(el => el.style.display = 'none');
+    }
+    
+    // Function to show error on a field
+    function showError(input, iconId) {
+        input.classList.add('error-field');
+        const icon = document.getElementById(iconId);
+        if (icon) icon.style.display = 'block';
+    }
+    
+    // Real-time validation for text inputs
+    document.querySelectorAll('input[type="text"], textarea').forEach(input => {
+        input.addEventListener('input', function() {
+            if (this.value.trim() !== '') {
+                this.classList.remove('error-field');
+                const icon = this.parentElement.querySelector('.error-icon');
+                if (icon) icon.style.display = 'none';
+            }
+        });
     });
-  </script>
+    
+    // Real-time validation for Genre dropdown
+    document.getElementById('genre').addEventListener('change', function() {
+        if (this.value !== '') {
+            this.classList.remove('error-field');
+            document.getElementById('genreIcon').style.display = 'none';
+        }
+    });
+    
+    // Real-time validation for Subject dropdown
+    document.getElementById('subject').addEventListener('change', function() {
+        if (this.value !== '') {
+            this.classList.remove('error-field');
+            document.getElementById('subjectIcon').style.display = 'none';
+        }
+    });
+    
+    // Real-time validation for Type radio
+    document.querySelectorAll('input[name="type"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (document.getElementById('painting').checked || document.getElementById('sculpture').checked) {
+                document.getElementById('typeBox').classList.remove('error-border');
+                document.getElementById('typeIcon').style.display = 'none';
+            }
+        });
+    });
+    
+    // Real-time validation for Creative Commons checkboxes
+    document.querySelectorAll('#ccBox input[type="checkbox"]').forEach(cb => {
+        cb.addEventListener('change', function() {
+            let anyChecked = document.getElementById('attribution').checked ||
+                             document.getElementById('noncommercial').checked ||
+                             document.getElementById('noderivative').checked ||
+                             document.getElementById('sharealike').checked;
+            if (anyChecked) {
+                document.getElementById('ccBox').classList.remove('error-border');
+                document.getElementById('ccIcon').style.display = 'none';
+            }
+        });
+    });
+    
+    // Real-time validation for Year
+    document.getElementById('year').addEventListener('input', function() {
+        let val = this.value.trim();
+        if (val !== '' && /^\d{4}$/.test(val)) {
+            this.classList.remove('error-field');
+            document.getElementById('yearIcon').style.display = 'none';
+        }
+    });
+    
+    // Submit validation
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        removeErrors();
+        let isValid = true;
+        
+        // Title
+        if (document.getElementById('title').value.trim() === '') {
+            showError(document.getElementById('title'), 'titleIcon');
+            isValid = false;
+        }
+        
+        // Description
+        if (document.getElementById('description').value.trim() === '') {
+            showError(document.getElementById('description'), 'descIcon');
+            isValid = false;
+        }
+        
+        // Genre
+        if (document.getElementById('genre').value === '') {
+            showError(document.getElementById('genre'), 'genreIcon');
+            isValid = false;
+        }
+        
+        // Type
+        if (!document.getElementById('painting').checked && !document.getElementById('sculpture').checked) {
+            document.getElementById('typeBox').classList.add('error-border');
+            document.getElementById('typeIcon').style.display = 'block';
+            isValid = false;
+        }
+        
+        // Medium
+        if (document.getElementById('medium').value.trim() === '') {
+            showError(document.getElementById('medium'), 'mediumIcon');
+            isValid = false;
+        }
+        
+        // Creative Commons
+        let attribution = document.getElementById('attribution').checked;
+        let noncommercial = document.getElementById('noncommercial').checked;
+        let noderivative = document.getElementById('noderivative').checked;
+        let sharealike = document.getElementById('sharealike').checked;
+        if (!attribution && !noncommercial && !noderivative && !sharealike) {
+            document.getElementById('ccBox').classList.add('error-border');
+            document.getElementById('ccIcon').style.display = 'block';
+            isValid = false;
+        }
+        
+        // Subject
+        if (document.getElementById('subject').value === '') {
+            showError(document.getElementById('subject'), 'subjectIcon');
+            isValid = false;
+        }
+        
+        // Year
+        let year = document.getElementById('year').value.trim();
+        if (year === '') {
+            showError(document.getElementById('year'), 'yearIcon');
+            isValid = false;
+        } else if (!/^\d{4}$/.test(year)) {
+            showError(document.getElementById('year'), 'yearIcon');
+            isValid = false;
+        }
+        
+        // Museum
+        if (document.getElementById('museum').value.trim() === '') {
+            showError(document.getElementById('museum'), 'museumIcon');
+            isValid = false;
+        }
+        
+        if (isValid) {
+            alert('Artwork details saved!');
+        } else {
+            alert('Please fill in all required fields!');
+        }
+    });
+    
+    // Clear button
+    clearBtn.addEventListener('click', function() {
+        document.getElementById('title').value = '';
+        document.getElementById('description').value = '';
+        document.getElementById('genre').value = '';
+        document.getElementById('medium').value = '';
+        document.getElementById('subject').value = '';
+        document.getElementById('year').value = '';
+        document.getElementById('museum').value = '';
+        
+        document.getElementById('painting').checked = false;
+        document.getElementById('sculpture').checked = false;
+        
+        document.getElementById('attribution').checked = false;
+        document.getElementById('noncommercial').checked = false;
+        document.getElementById('noderivative').checked = false;
+        document.getElementById('sharealike').checked = false;
+        
+        removeErrors();
+    });
+</script>
+
 </body>
 </html>
