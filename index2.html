@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial jQuery-Wanie corner</title>
+    <script src="jquery-4.0.0.js"></script>
+
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .header{
+            text-align: center;
+            padding: 20px;
+            background: rgb(137, 43, 137);
+            color: white;
+        }
+
+        .container{
+            padding: 50px;
+        }
+
+        h2{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>TUTORIAL JQUERY WANIE</h1>
+    </div>
+
+    <div class="container">
+        <h2 class="paragraph1">Situasi Pagi</h2>
+        <p>
+        Pagi tadi aku bangun rasa malas sikit, lepas tu makan biskut je buat sarapan sebelum pergi kelas pagi.
+        Udara luar pulak rasa tak segar macam biasa, rasa macam berat je bila tarik nafas,<b>buat mood lagi down.</b>
+        Tapi aku gagahkan jugak diri untuk bersiap sebab taknak lambat masuk kelas. Jalan pergi kelas pun sunyi je,
+        orang pun tak ramai lagi sebab masih awal pagi. Sampai kelas aku duduk diam kejap, rehatkan diri sambil cuba
+        kumpul balik mood supaya boleh fokus dalam kelas walaupun rasa lemau sikit.
+        </p>
+
+        <h2 id="paragraph2">Situasi Tengah Hari</h2>
+        <p class="p2">
+        Tengah hari tadi aku dah mula rasa penat sikit lepas habis kelas pagi,
+        perut pun dah lapar sebab sarapan pun biskut je tadi. Aku pergi makan tengah hari dengan kawan, 
+        borak-borak sikit hilangkan stress kelas tadi. <b> tengah hari panas gila rasa malas nak 
+        bergerak banyak.</b> Lepas makan aku duduk lepak kejap, ambil masa rehat sebelum sambung aktiviti lain. 
+        Walaupun penat, aku cuba juga kekalkan mood supaya hari tak rasa terlalu boring.
+        </p>
+    </div>
+
+<ul class="daftar">
+    <li>Nasi Lemak 1</li>
+    <li>Nasi Lemak 2</li>
+    <li>Nasi Lemak 3</li>
+    <li>Nasi Lemak 4</li>
+    <li>Nasi Lemak 5</li>
+    <li>Nasi Lemak 6</li>
+</ul>
+
+<input type="button" value="Tombol" name="tombol"/>
+<input type="text" value=""/>
+<input type="submit" value="Submit"/>
+<input type="reset" value="Reset" name="reset"/>
+<br><br>
+
+<script type="text/javascript">
+    //$('.paragraph1').hide();
+    //$('#paragraph2').hide();
+    $('.p2 b').css('color', 'red');
+   $('.daftar li:eq(0)').css('color','blue');
+   $('.daftar li:eq(1)').css('color','red');
+   $('.daftar li:eq(2)').css('color','green');
+   $('.daftar li:eq(3)').css('color','brown');
+   $('.daftar li:eq(4)').css('color','purple');
+   $('.daftar li:eq(5)').css('color','yellow');
+   
+   $('.daftar li:even').css('background','pink');
+   $('.daftar li:odd').css('background','grey');
+
+   $('.daftar li:nth-child(2n)').css('list-style','square');
+
+  // $('[name=]').hide();
+
+</script>
+
+</body>
+</html>

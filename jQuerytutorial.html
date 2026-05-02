@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial jQuery-Wanie corner</title>
+    <script src="jquery-4.0.0.js"></script>
+
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .header{
+            text-align: center;
+            padding: 20px;
+            background: rgb(137, 43, 137);
+            color: white;
+        }
+
+        .container{
+            padding: 50px;
+        }
+
+        h2{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>TUTORIAL JQUERY WANIE</h1>
+    </div>
+
+    <div class="container">
+        <button id="hilang">Hilang</button>
+        <button id="muncul">Muncul</button>
+        <button id="toggle">Toggle</button>
+
+        <button id="SlideHilang">Slide Hilang</button>
+        <button id="SlideMuncul">Slide Muncul</button>
+        <button id="SlideToggle">Slide Toggle</button>
+
+    <p id="paragraf">
+        Rutin harian saya biasanya bermula seawal pagi dengan bangun tidur
+        , membersihkan diri, dan bersiap untuk memulakan aktiviti seharian.
+        Selepas itu, saya akan mengambil sarapan ringkas bagi memberi tenaga
+        sebelum meneruskan tugasan sama ada menghadiri kelas, menyiapkan 
+        kerja kursus, atau melakukan projek akademik yang sedang berjalan. 
+        Pada waktu tengah hari, saya meluangkan masa untuk makan dan berehat 
+        seketika sebelum menyambung semula aktiviti seperti membaca, membuat 
+        latihan praktikal, atau menyemak nota pelajaran. Menjelang petang, 
+        saya sering menguruskan tugasan tambahan seperti menulis laporan, 
+        menyediakan bahan pembentangan, atau melakukan penyelidikan kecil 
+        untuk menambah pengetahuan. Pada waktu malam pula, saya lebih banyak 
+        menumpukan masa untuk menyemak semula kerja yang telah dilakukan, membuat perancangan untuk hari berikutnya, dan meluangkan masa bersama keluarga sebelum tidur. Dengan rutin yang tersusun ini, saya dapat memastikan setiap hari berjalan dengan lebih teratur dan produktif.
+    </p>
+
+    </div>
+
+<script>
+    $(document).ready(function(){
+        $('#hilang').click(function(){
+            $('#paragraf').fadeOut(3000, function(){
+                $('#hilang').text('Sudah Hilang');
+            });
+        })
+        $('#muncul').click(function(){
+            $('#paragraf').fadeIn('slow');
+        })
+
+        $('#toggle').click(function(){
+            $('#paragraf').fadeToggle('slow');
+        })
+
+        $('#SlideHilang').click(function(){
+            $('#paragraf').slideUp('slow');
+        })
+
+        $('#SlideMuncul').click(function(){
+            $('#paragraf').slideDown('slow');
+        })
+
+        $('#SlideToggle').click(function(){
+            $('#paragraf').slideToggle('slow');
+        })
+
+    })
+
+</script>
+
+</body>
+</html>

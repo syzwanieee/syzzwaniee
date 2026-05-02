@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIMATION jQuery-Wanie corner</title>
+    <script src="jquery-4.0.0.js"></script>
+
+    <style>
+        body{
+            font-size: 17px;
+            font-family: Arial;
+            margin: 0;
+        }
+
+        .header{
+            text-align: center;
+            padding: 20px;
+            background: rgb(137, 43, 137);
+            color: white;
+        }
+
+        .container{
+            padding: 50px;
+        }
+
+        h2{
+            margin-top: 30px;
+        }
+
+        #gbr{
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>ANIMATION JQUERY WANIE</h1>
+    </div>
+
+    <div class="container">
+        <button id="animasi">Animasi</button>
+        
+        <br><br>
+        <img id="gbr" src="my machaaaa.jpeg" width="300px">
+
+    </div>
+
+<script>
+    $(document).ready(function(){
+        $('#animasi').click(function(){
+            $('#gbr').animate({
+                top: 200,
+            })
+
+            $('#gbr').animate({
+                left: 300,
+            })
+
+            $('#gbr').animate({
+                top: 0,
+            })
+
+            $('#gbr').animate({
+                left: 0,
+            })
+
+            $('#gbr').animate({
+                width: 400,
+                opacity: 0
+            })
+        })
+
+    })
+
+</script>
+
+</body>
+</html>

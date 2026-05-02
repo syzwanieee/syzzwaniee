@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorial jQuery-Wanie corner</title>
+
+<script src="jquery-4.0.0.js"></script>
+
+<style>
+    body{
+        font-size: 17px;
+        font-family: Arial;
+        margin: 0;
+    }
+
+    .header{
+        text-align: center;
+        padding: 20px;
+        background: rgb(137, 43, 137);
+        color: white;
+    }
+
+    .container{
+        padding: 50px;
+    }
+
+    button{
+        padding: 10px 15px;
+        margin-right: 10px;
+        cursor: pointer;
+        border: none;
+        background: #444;
+        color: white;
+        border-radius: 5px;
+    }
+
+    button:hover{
+        background: #222;
+    }
+
+    #gbr1{
+        margin-top: 20px;
+        width: 250px;
+        transition: 0.3s;
+        display: block;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>TUTORIAL JQUERY WANIE</h1>
+</div>
+
+<div class="container">
+
+    <h2>Mouse Event</h2>
+
+    <button id="tombol1">Hilang</button>
+    <button id="tombol2">Muncul</button>
+
+    <br><br>
+
+    <img id="gbr1" src="waniee.jpeg">
+
+</div>
+
+<script>
+$(document).ready(function(){
+
+    // HILANG → megi + hide
+    $('#tombol1').on('click', function(){
+        $('#gbr1').attr('src', 'megi.jpg').hide();
+    });
+
+    // MUNCUL → waniee + show
+    $('#tombol2').on('click', function(){
+        $('#gbr1').attr('src', 'megi.jpg').show();
+    });
+
+    // hover masuk → megi
+    $('#gbr1').on('mouseenter', function(){
+        $(this).attr('src', 'megi.jpg');
+    });
+
+    // hover keluar → waniee
+    $('#gbr1').on('mouseleave', function(){
+        $(this).attr('src', 'waniee.jpeg');
+    });
+
+});
+</script>
+
+</body>
+</html>
