@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>WANIE · Full Video Studio | Stars Edition</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 20% 30%, #0a0a25, #020010);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      position: relative;
+    }
+
+    /* BINTANG-BINTANG BERGELIMANG */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 12% 45%, #fff9e6, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 85% 25%, #ffe2b5, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 35% 78%, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 68% 92%, #fff0cc, rgba(0,0,0,0)),
+        radial-gradient(1.8px 1.8px at 5% 15%, #ffefbf, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 55% 60%, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.2px 1.2px at 92% 70%, #ffe1aa, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 25% 35%, #fff5e0, rgba(0,0,0,0)),
+        radial-gradient(2.2px 2.2px at 73% 15%, #ffecbf, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 48% 88%, #ffffff, rgba(0,0,0,0));
+      background-size: 280px 280px;
+      background-repeat: repeat;
+      opacity: 0.9;
+      pointer-events: none;
+      animation: starsGlow 5s infinite alternate;
+    }
+
+    @keyframes starsGlow {
+      0% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-radial-gradient(circle at 30% 40%, rgba(255,250,240,0.02) 0px, rgba(0,0,0,0.1) 2px, transparent 3px);
+      pointer-events: none;
+    }
+
+    /* MAIN CONTAINER */
+    .studio-container {
+      max-width: 900px;
+      width: 100%;
+      height: auto;
+      max-height: 95vh;
+      background: rgba(10, 12, 35, 0.8);
+      backdrop-filter: blur(22px);
+      border-radius: 2rem;
+      border: 1px solid rgba(210, 150, 255, 0.6);
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    .studio-header {
+      text-align: center;
+      padding: 0.8rem 1rem 0.5rem;
+      border-bottom: 1px solid rgba(220, 180, 255, 0.3);
+      flex-shrink: 0;
+    }
+
+    .studio-header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 1.6rem;
+      background: linear-gradient(125deg, #FFF0D0, #E0B5FF, #8FD4FF);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .badge-player {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(110, 80, 190, 0.55);
+      padding: 0.15rem 0.7rem;
+      border-radius: 60px;
+      margin-top: 4px;
+      font-size: 0.6rem;
+      border: 1px solid #d3a5ff;
+      color: #F3E6FF;
+    }
+
+    /* VIDEO ZONE - SAIZ DIKECILKAN */
+    .video-zone {
+      padding: 0.6rem 1.2rem 0.3rem;
+      flex-shrink: 0;
+    }
+
+    #masterVideo {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 1rem;
+      height: auto;
+      max-height: 280px;
+      aspect-ratio: 16 / 9;
+      background: #000000;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      outline: none;
+    }
+
+    .info-panel {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.5);
+      margin: 0.3rem 1.2rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 60px;
+      flex-shrink: 0;
+    }
+
+    .current-title {
+      font-weight: 600;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0.15rem 0.6rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      color: #F0E2FF;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 6px;
+    }
+
+    .ctrl {
+      background: rgba(180, 140, 255, 0.3);
+      border: none;
+      padding: 3px 10px;
+      border-radius: 40px;
+      color: #F5EBFF;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 0.7rem;
+      transition: 0.2s;
+    }
+
+    .ctrl:hover {
+      background: #ba84ffcc;
+      color: white;
+    }
+
+    /* PLAYLIST - BOLEH SCROLL */
+    .playlist-wrapper {
+      padding: 0.2rem 1rem 0.4rem;
+      flex-shrink: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .playlist-badge {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      max-height: 70px;
+      overflow-y: auto;
+      padding: 0.4rem 0.3rem;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 50px;
+    }
+
+    .playlist-badge::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+    .playlist-badge::-webkit-scrollbar-track {
+      background: rgba(100, 70, 150, 0.3);
+      border-radius: 10px;
+    }
+    .playlist-badge::-webkit-scrollbar-thumb {
+      background: #cd9eff;
+      border-radius: 10px;
+    }
+
+    .video-chip {
+      background: rgba(48, 35, 100, 0.85);
+      border: 1px solid #b184ff;
+      border-radius: 50px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: #F2E6FF;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .video-chip.active {
+      background: linear-gradient(95deg, #c28aff, #a35eff);
+      border-color: #ffe1aa;
+      box-shadow: 0 0 6px #d994ff;
+      color: white;
+    }
+
+    .video-chip:hover {
+      transform: translateY(-2px);
+      background: #a270f0;
+    }
+
+    /* BACK BUTTON */
+    .back-home {
+      text-align: center;
+      padding: 0.4rem 1rem 0.7rem;
+      border-top: 1px solid rgba(220, 180, 255, 0.25);
+      flex-shrink: 0;
+    }
+
+    .back-home a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(110, 75, 185, 0.85);
+      padding: 0.35rem 1.3rem;
+      border-radius: 50px;
+      text-decoration: none;
+      color: #F3EAFF;
+      font-size: 0.75rem;
+      font-weight: 600;
+      transition: 0.2s;
+      border: 1px solid #cfa5ff;
+    }
+
+    .back-home a:hover {
+      background: #bc86ffcc;
+      color: white;
+      transform: scale(0.97);
+      gap: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 650px) {
+      body { padding: 0.5rem; }
+      .studio-header h1 { font-size: 1.3rem; }
+      .video-zone { padding: 0.4rem 0.8rem; }
+      #masterVideo { max-height: 220px; }
+      .info-panel { margin: 0.3rem 0.8rem; flex-direction: column; }
+      .playlist-wrapper { padding: 0 0.6rem 0.3rem; }
+      .playlist-badge { max-height: 65px; gap: 5px; }
+      .video-chip { font-size: 0.55rem; padding: 0.15rem 0.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .studio-header h1 { font-size: 1.1rem; }
+      #masterVideo { max-height: 180px; }
+      .ctrl { padding: 2px 7px; font-size: 0.6rem; }
+      .current-title { font-size: 0.6rem; }
+      .back-home a { padding: 0.25rem 1rem; font-size: 0.65rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="studio-container">
+  <div class="studio-header">
+    <h1>🎥 WANIE VIDEO STUDIO ⭐</h1>
+    <div class="badge-player"><i class="fas fa-forward"></i> Auto-play · All modules (10 → EXTRA)</div>
+  </div>
+
+  <div class="video-zone">
+    <video id="masterVideo" controls autoplay playsinline>
+      <source src="" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="info-panel">
+    <div class="current-title" id="videoStatus">🎬 Ready to play</div>
+    <div class="nav-buttons">
+      <button class="ctrl" id="prevVideoBtn"><i class="fas fa-backward"></i> PREV</button>
+      <button class="ctrl" id="nextVideoBtn">NEXT <i class="fas fa-forward"></i></button>
+    </div>
+  </div>
+
+  <div class="playlist-wrapper">
+    <div class="playlist-badge" id="playlistChips"></div>
+  </div>
+
+  <div class="back-home">
+    <a href="wanie job sheet.html"><i class="fas fa-home"></i> Back to Job Sheets</a>
+  </div>
+</div>
+
+<script>
+  const videoPlaylist = [
+    { id: "JS10", title: "· Mouse Event", file: "mouseevent.mp4" },
+    { id: "JS11", title: "· Slide Effect", file: "slide.mp4" },
+    { id: "JS13", title: "· Animation", file: "animation.mp4" },
+    { id: "JS14", title: "· Heading Magic", file: "heading.mp4" },
+    { id: "JS15", title: "· XAMPP Setup", file: "xampp.mp4" },
+    { id: "JSEXTRA", title: "✨ Add to Cart", file: "addtocart.mp4" },
+    { id: "MODE", title: "✨ Dark Mode", file: "darkmode.mp4" },
+    { id: "LOCAL", title: "✨ Local Storage", file: "localstorage.mp4" }
+  ];
+
+  let currentIdx = 0;
+  const video = document.getElementById('masterVideo');
+  const statusSpan = document.getElementById('videoStatus');
+  const chipsContainer = document.getElementById('playlistChips');
+
+  function loadVideo(index) {
+    if (index < 0) index = 0;
+    if (index >= videoPlaylist.length) index = 0;
+    currentIdx = index;
+    const item = videoPlaylist[currentIdx];
+    video.src = item.file;
+    video.load();
+    statusSpan.innerHTML = `🎬 ${item.id} : ${item.title}`;
+    video.play().catch(e => console.log("Autoplay restricted", e));
+    highlightActiveChip();
+  }
+
+  function nextVideo() {
+    let next = currentIdx + 1;
+    if (next >= videoPlaylist.length) next = 0;
+    loadVideo(next);
+  }
+
+  function prevVideo() {
+    let prev = currentIdx - 1;
+    if (prev < 0) prev = videoPlaylist.length - 1;
+    loadVideo(prev);
+  }
+
+  function renderChips() {
+    chipsContainer.innerHTML = '';
+    videoPlaylist.forEach((item, idx) => {
+      const chip = document.createElement('div');
+      chip.className = 'video-chip';
+      chip.innerHTML = `<i class="fas fa-play-circle"></i> ${item.id}`;
+      if (idx === currentIdx) chip.classList.add('active');
+      chip.addEventListener('click', () => {
+        if (currentIdx !== idx) loadVideo(idx);
+      });
+      chipsContainer.appendChild(chip);
+    });
+  }
+
+  function highlightActiveChip() {
+    const chips = document.querySelectorAll('.video-chip');
+    chips.forEach((chip, i) => {
+      if (i === currentIdx) chip.classList.add('active');
+      else chip.classList.remove('active');
+    });
+  }
+
+  video.addEventListener('ended', () => nextVideo());
+  document.getElementById('nextVideoBtn').addEventListener('click', nextVideo);
+  document.getElementById('prevVideoBtn').addEventListener('click', prevVideo);
+
+  function init() {
+    renderChips();
+    loadVideo(0);
+  }
+
+  init();
+</script>
+
+</body>
+</html>

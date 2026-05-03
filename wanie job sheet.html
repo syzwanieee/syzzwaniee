@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>WANIE · Job Sheets Portal</title>
+
+<!-- Google Fonts + Font Awesome -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', 'Poppins', sans-serif;
+    background: radial-gradient(ellipse at 30% 20%, #0a0a2a, #010018);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    position: relative;
+  }
+
+  /* ================= LANGIT BERTABUR BINTANG ================= */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      radial-gradient(2px 2px at 15% 30%, #fff, rgba(0,0,0,0)),
+      radial-gradient(3px 3px at 75% 55%, #ffe6b0, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 95% 15%, #ffdca8, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 45% 85%, #fff, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 5% 70%, #ffdd99, rgba(0,0,0,0)),
+      radial-gradient(3px 3px at 60% 20%, #ffffff, rgba(0,0,0,0)),
+      radial-gradient(1.5px 1.5px at 88% 92%, #ffe0b3, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 35% 10%, #fff, rgba(0,0,0,0)),
+      radial-gradient(2.5px 2.5px at 50% 48%, #fff3cf, rgba(0,0,0,0)),
+      radial-gradient(1.8px 1.8px at 22% 65%, #ffffff, rgba(0,0,0,0)),
+      radial-gradient(1.2px 1.2px at 78% 33%, #ffe2aa, rgba(0,0,0,0)),
+      radial-gradient(2px 2px at 40% 92%, #fff5e0, rgba(0,0,0,0));
+    background-size: 250px 250px;
+    background-repeat: repeat;
+    opacity: 0.8;
+    pointer-events: none;
+    animation: starTwinkle 6s infinite alternate;
+  }
+
+  /* bintang berkelip perlahan */
+  @keyframes starTwinkle {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+  }
+
+  /* lapisan noise tambahan */
+  body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-radial-gradient(circle at 20% 30%, rgba(255,255,245,0.02) 0px, rgba(0,0,0,0.15) 2px, transparent 3px);
+    pointer-events: none;
+  }
+
+  .portal {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    max-height: 95vh;
+    background: rgba(8, 10, 35, 0.65);
+    backdrop-filter: blur(20px);
+    border-radius: 3.5rem;
+    border: 1px solid rgba(210, 150, 255, 0.5);
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 220, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+  }
+
+  .header {
+    text-align: center;
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid rgba(220, 180, 255, 0.25);
+    flex-shrink: 0;
+  }
+
+  .header h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.2rem;
+    background: linear-gradient(135deg, #FFEFD6, #E0B0FF, #AAD4FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+  }
+
+  .sub {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(120, 90, 200, 0.45);
+    padding: 0.3rem 1.2rem;
+    border-radius: 40px;
+    margin-top: 0.6rem;
+    font-size: 0.75rem;
+    border: 1px solid #c79aff;
+    color: #F2E6FF;
+  }
+
+  .badge-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.45);
+    margin: 1rem 1.5rem 0;
+    padding: 0.5rem 1.2rem;
+    border-radius: 60px;
+    flex-wrap: wrap;
+    gap: 10px;
+    flex-shrink: 0;
+    color: #EADDFF;
+  }
+
+  #progressText {
+    font-weight: 600;
+    font-size: 0.85rem;
+    background: rgba(255,255,240,0.12);
+    padding: 0.2rem 0.8rem;
+    border-radius: 30px;
+    color: #dcc9ff;
+  }
+
+  /* SCROLLABLE GRID */
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    padding: 1.3rem 1.5rem 1.5rem;
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .button-grid::-webkit-scrollbar {
+    width: 5px;
+  }
+  .button-grid::-webkit-scrollbar-track {
+    background: rgba(100, 70, 150, 0.2);
+    border-radius: 10px;
+  }
+  .button-grid::-webkit-scrollbar-thumb {
+    background: #c68eff;
+    border-radius: 10px;
+  }
+
+  .job-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(38, 30, 80, 0.75);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(190, 140, 255, 0.55);
+    border-radius: 2rem;
+    padding: 0.9rem 0.8rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #F8F0FF;
+    transition: all 0.25s ease;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+  }
+
+  .job-btn i {
+    font-size: 1.2rem;
+    color: #d3adff;
+  }
+
+  .job-btn:hover {
+    transform: translateY(-3px);
+    border-color: #ffc285;
+    background: rgba(90, 70, 150, 0.85);
+    color: #FFFFFF;
+  }
+
+  .job-btn.completed {
+    border-color: #7effb0 !important;
+    background: rgba(80, 255, 140, 0.14) !important;
+    box-shadow: 0 0 12px rgba(80, 255, 120, 0.35);
+    color: #E8FFE8;
+  }
+
+  .video-master {
+    background: linear-gradient(115deg, #5a36b8, #35208a);
+    border: 1px solid #ffcf7a;
+  }
+
+  .video-master i {
+    color: #FFE0A3;
+  }
+
+  .back-foot {
+    text-align: center;
+    padding: 0.8rem 1.5rem 1.2rem;
+    border-top: 1px solid rgba(220, 180, 255, 0.2);
+    flex-shrink: 0;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(110, 75, 185, 0.6);
+    padding: 0.5rem 1.5rem;
+    border-radius: 40px;
+    text-decoration: none;
+    color: #F3EAFF;
+    font-size: 0.85rem;
+    transition: 0.2s;
+  }
+
+  .back-link:hover {
+    background: #b87effcc;
+    color: white;
+    gap: 12px;
+  }
+
+  @media (max-width: 650px) {
+    body { padding: 0.8rem; }
+    .header h1 { font-size: 2rem; }
+    .button-grid { grid-template-columns: 1fr; gap: 0.8rem; padding: 1rem; }
+    .badge-info { margin: 0.8rem 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="portal">
+  <div class="header">
+    <h1>✨ WANIE JOB SHEET ✨</h1>
+    <div class="sub"><i class="fas fa-crown"></i> 10 interactive modules</div>
+  </div>
+
+  <div class="badge-info">
+    <span><i class="fas fa-tasks"></i> Completion status</span>
+    <p id="progressText">Progress: 0% completed</p>
+  </div>
+
+  <div class="button-grid" id="jobGrid">
+    <a href="JS 1.html" class="job-btn" data-job="1"><i class="fas fa-file-alt"></i> JOB SHEET 1</a>
+    <a href="JS 2.html" class="job-btn" data-job="2"><i class="fas fa-file-alt"></i> JOB SHEET 2</a>
+    <a href="JS 3.html" class="job-btn" data-job="3"><i class="fas fa-file-alt"></i> JOB SHEET 3</a>
+    <a href="JS-5.html" class="job-btn" data-job="4"><i class="fas fa-file-alt"></i> JOB SHEET 4</a>
+    <a href="JS-4.html" class="job-btn" data-job="5"><i class="fas fa-file-alt"></i> JOB SHEET 5</a>
+    <a href="JS-6.html" class="job-btn" data-job="6"><i class="fas fa-file-alt"></i> JOB SHEET 6</a>
+    <a href="JS-7.html" class="job-btn" data-job="7"><i class="fas fa-file-alt"></i> JOB SHEET 7</a>
+    <a href="JS-8.html" class="job-btn" data-job="8"><i class="fas fa-file-alt"></i> JOB SHEET 8</a>
+    <a href="JS-9.html" class="job-btn" data-job="9"><i class="fas fa-file-alt"></i> JOB SHEET 9</a>
+    <a href="wanievideo.html" class="job-btn video-master" data-job="video"><i class="fas fa-play-circle"></i> 🎬 JOB SHEET JQUERY & ADD TO CART</a>
+  </div>
+
+  <div class="back-foot">
+    <a href="next page.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to main menu</a>
+  </div>
+</div>
+
+<script>
+  const cards = document.querySelectorAll('.job-btn');
+  const total = cards.length;
+  let completedAmount = 0;
+  const progressSpan = document.getElementById('progressText');
+
+  function refreshProgress() {
+    let percent = Math.round((completedAmount / total) * 100);
+    progressSpan.innerHTML = `<i class="fas fa-chart-simple"></i> Progress: ${percent}% completed`;
+  }
+
+  const interval = setInterval(() => {
+    if (completedAmount >= total) {
+      clearInterval(interval);
+    } else {
+      const current = cards[completedAmount];
+      if (current) current.classList.add('completed');
+      completedAmount++;
+      refreshProgress();
+    }
+  }, 200);
+</script>
+
+</body>
+</html>
