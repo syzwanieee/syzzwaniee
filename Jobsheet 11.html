@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Tutorial jQuery-Najjwa corner</title>
-        <script src="js/jquery11.js"></script>
+        <script src="jquery11.js"></script>
         <style>
             body{
                 font-size: 17px;
@@ -35,7 +35,7 @@
             <button id="tombol2">Muncul</button>
 
             <br><br>
-            <img id="gbr1" src="image/cutecat.jpg" width="250"/>
+            <img id="gbr1" src="cutecat.jpg" width="250"/>
         </div>
         
         
@@ -61,10 +61,10 @@
 
 
                 $('img').on('mouseenter', function(){
-                    $('#gbr1').attr('src','image/images(1).jpg');
+                    $('#gbr1').attr('src','images(1).jpg');
                 })
                 $('img').on('mouseleave', function(){
-                    $('#gbr1').attr('src','image/cutecat.jpg');
+                    $('#gbr1').attr('src','cutecat.jpg');
                 })
 
                 $('#tombol').on('click', function(){
@@ -72,7 +72,7 @@
                 })
 
                 $('#tombol2').on('click', function(){
-                    $('#gbr1').attr('src','image/cat.gif');
+                    $('#gbr1').attr('src','cat.gif');
                     $('#gbr1').show();
                 })
                 /* $('#tombol2').on('mouseleave', function(){
