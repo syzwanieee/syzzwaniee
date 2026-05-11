@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tutorial jQuery-Najjwa corner</title>
+        <script src="js/jquery.js"></script>
+        <style>
+            body{
+                font-size: 17px;
+                font-family: Arial;
+            }
+            .header{
+                text-align: center;
+                padding: 20px;
+                background: rgb(120, 214, 89);
+                color: rgb(68,68,68);
+            }
+
+            .container{
+                padding: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>TUTORIAL JQUERY NAJJWA</h1>
+        </div>
+
+        <div class="container">
+            <h2 class="paragraf1">Situasi Pagi</h2>
+            <p>Pagi ini saya terjaga awal dan perlahan-lahan bangun dari katil sambil menikmati suasana yang masih sunyi dan tenang. <b>Cahaya matahari mula menyelinap masuk melalui tingkap, memberikan sinaran lembut yang menenangkan jiwa.</b> Dari luar kedengaran bunyi kicauan burung dan hembusan angin pagi yang sejuk, membuatkan suasana terasa segar dan nyaman. Saya duduk seketika, menghayati pemandangan langit yang cerah sambil menarik nafas dalam-dalam sebelum memulakan hari. Selepas itu, saya bersiap dengan lebih tenang tanpa tergesa-gesa, seolah-olah ingin memanjangkan detik pagi yang damai ini. Pagi yang sederhana ini memberi saya sedikit ketenangan sebelum memulakan rutin harian seperti biasa.</p>
+            <br><br>
+            <h2 id="paragraf2">Situasi Tengah Hari</h2>
+            <p class="p2"><b>Tengah hari ini suasana terasa lebih hangat apabila matahari tegak di atas kepala, menyinari persekitaran dengan cahaya yang terang.</b> Saya meluangkan masa seketika untuk berehat selepas menghadiri kelas pagi, sambil menikmati angin yang sesekali bertiup perlahan. <b>Bunyi suasana sekeliling seperti perbualan rakan-rakan dan kenderaan yang lalu-lalang menambahkan lagi rasa hidup di waktu tengah hari.</b> Saya duduk sambil memerhati keadaan sekeliling, melihat orang ramai sibuk dengan urusan masing-masing. Walaupun cuaca agak panas, suasana ini tetap memberi peluang untuk saya menenangkan fikiran sebelum menyambung aktiviti seterusnya. Tengah hari ini terasa sederhana tetapi cukup bermakna sebagai waktu untuk berhenti seketika dan mengumpul tenaga.</p>
+        </div>
+
+<ul class="daftar">
+    <li>Kucing 1</li>
+    <li>Kucing 2</li>
+    <li>Kucing 3</li>
+    <li>Kucing 4</li>
+    <li>Kucing 5</li>
+    <li>Kucing 6</li>
+</ul>       
+
+<input type="button" value="Tombol" name="tombol"/>
+<input type="text" value=""/>
+<input type="submit" value="Submit"/>
+<input type="reset" value="Reset" name="reset"/>
+<br><br>
+
+<script type="text/javascript">
+   // $('.paragraf1').hide();
+   // $('#paragraf2').hide();
+
+    $('.p2 b').css('color','lightgreen');
+
+    $('.daftar li:first').css('color','violet');
+    $('.daftar li:eq(1)').css('color','blue');
+    $('.daftar li:eq(2)').css('color','cyan');
+    $('.daftar li:eq(3)').css('color','yellow');
+    $('.daftar li:eq(4)').css('color','orange');
+    $('.daftar li:last').css('color','red');
+    $('.daftar li:even').css('background','green');
+    $('.daftar li:odd').css('background','lightgray');
+    $('.daftar li:nth-child(odd)').css('list-style','square');
+
+   // $('[name]').hide();
+
+   // $('*').hide();
+    
+</script>        
+    </body>
+</html>
