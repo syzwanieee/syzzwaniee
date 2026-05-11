@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/9a02fa625b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="stylextra.css">
+    <title>Tambah Ke Troli (Add to Cart)</title>
+    <h1>Najjwa's Tableware Store</h1>
+    
+</head>
+<body>
+    <div class="utama">
+        <div class="pertama">
+            <table>
+                <tr>
+                    <th>Barang</th>
+                    <th>Harga</th>
+                </tr>
+                <tr>
+                    <td>Cawan</td>
+                    <td>RM5.00</td>
+                    <td><button class="beli" onclick="tambahData({nama: 'Cawan', harga: 5})"><i class="fa-solid fa-cart-arrow-down"></i> Beli</button></td>
+                </tr>
+                <tr>
+                    <td>Pinggan</td>
+                    <td>RM7.00</td>
+                    <td><button class="beli" onclick="tambahData({nama: 'Pinggan', harga: 7})"><i class="fa-solid fa-cart-arrow-down"></i> Beli</button></td>
+                </tr>
+                <tr>
+                    <td>Sudu</td>
+                    <td>RM3.00</td>
+                    <td><button class="beli" onclick="tambahData({nama: 'Sudu', harga: 3})"><i class="fa-solid fa-cart-arrow-down"></i> Beli</button></td>
+                </tr>
+                <tr>
+                    <td>Piring</td>
+                    <td>6.00</td>
+                    <td><button class="beli" onclick="tambahData({nama: 'Piring', harga: 6})"><i class="fa-solid fa-cart-arrow-down"></i> Beli</button></td>
+                </tr>
+                <tr>
+                    <td>Mangkuk</td>
+                    <td>RM7.00</td>
+                    <td><button class="beli" onclick="tambahData({nama: 'Mangkuk', harga: 7})"><i class="fa-solid fa-cart-arrow-down"></i> Beli</button></td>
+                </tr>
+            </table>
+        </div>
+        <div class="kedua">
+            <div class="kandungan-kedua"></div>
+
+            <div id="troli"></div>
+
+            <div class="jumlah">
+                <p>Jumlah</p>
+                <div id="paparjumlah">
+                    <p class="bold">RM0.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./indexXtra.js"></script>
+</body>
+</html>
+
+
