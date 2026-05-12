@@ -5,226 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NAJJWA JOB SHEET</title>
 
-<style>
-
-/* ================= RESET ================= */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html, body{
-  width:100%;
-  height:100%;
-  font-family:'Poppins', sans-serif;
-  overflow:hidden;
-}
-
-/* ================= BODY ================= */
-body{
-  background: linear-gradient(120deg, #1a0028 0%, #2a003a 30%, #001a4d 60%, #002966 100%);
-  background-size:400% 400%;
-  animation:bgMove 12s ease infinite;
-  color:white;
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-
-  padding:20px;
-}
-
-/* ================= BACKGROUND ANIMATION ================= */
-@keyframes bgMove{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-
-/* ================= TITLE ================= */
-h1{
-  font-size:60px;
-  margin-bottom:10px;
-  text-align:center;
-  letter-spacing:3px;
-
-  text-shadow:
-  0 0 15px rgba(190,80,255,0.9),
-  0 0 35px rgba(120,180,255,0.6);
-}
-
-/* ================= PROGRESS ================= */
-#progressText{
-  font-size:18px;
-  margin-bottom:20px;
-  font-weight:bold;
-}
-
-/* ================= MAIN CONTAINER ================= */
-.sheet-container{
-  width:100%;
-  max-width:1200px;
-
-  flex:1;
-  overflow-y:auto;
-
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:25px;
-
-  padding:10px;
-}
-
-/* ================= CATEGORY BOX ================= */
-.category-box{
-  background:rgba(255,255,255,0.05);
-
-  border:1px solid rgba(190,80,255,0.3);
-
-  border-radius:25px;
-
-  padding:25px;
-
-  backdrop-filter:blur(10px);
-
-  box-shadow:
-  0 0 20px rgba(190,80,255,0.2),
-  0 0 40px rgba(120,180,255,0.1);
-
-  animation:fadeUp 0.6s ease forwards;
-
-  display:flex;
-  flex-direction:column;
-
-  gap:15px;
-}
-
-/* ================= CATEGORY TITLE ================= */
-.category-box h2{
-  font-size:28px;
-  margin-bottom:5px;
-
-  text-shadow:
-  0 0 10px rgba(190,80,255,0.7);
-}
-
-/* ================= JOB SHEET BUTTON ================= */
-.sheet-box{
-  display:block;
-
-  padding:18px;
-
-  border-radius:18px;
-
-  text-decoration:none;
-  color:white;
-
-  background:rgba(255,255,255,0.05);
-
-  border:1px solid rgba(255,255,255,0.1);
-
-  transition:0.3s ease;
-
-  font-weight:600;
-}
-
-/* ================= HOVER ================= */
-.sheet-box:hover{
-  transform:translateY(-5px) scale(1.02);
-
-  background:rgba(190,80,255,0.18);
-
-  box-shadow:
-  0 0 20px rgba(190,80,255,0.45),
-  0 0 40px rgba(120,180,255,0.25);
-}
-
-/* ================= COMPLETED ================= */
-.sheet-box.completed{
-  border-color:rgba(80,255,120,0.6);
-
-  background:rgba(80,255,120,0.12);
-
-  box-shadow:
-  0 0 18px rgba(80,255,120,0.5);
-}
-
-/* ================= BACK BUTTON ================= */
-.back-btn{
-  margin-top:20px;
-
-  padding:12px 30px;
-
-  text-decoration:none;
-  color:white;
-
-  border-radius:16px;
-
-  background:rgba(190,80,255,0.4);
-
-  transition:0.3s ease;
-}
-
-.back-btn:hover{
-  background:rgba(190,80,255,0.8);
-
-  transform:scale(1.05);
-}
-
-/* ================= ANIMATION ================= */
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(20px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-}
-
-/* ================= SCROLLBAR ================= */
-.sheet-container::-webkit-scrollbar{
-  width:8px;
-}
-
-.sheet-container::-webkit-scrollbar-thumb{
-  background:rgba(255,255,255,0.25);
-  border-radius:10px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media screen and (max-width:768px){
-
-  h1{
-    font-size:42px;
-  }
-
-  .sheet-container{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media screen and (max-width:480px){
-
-  h1{
-    font-size:34px;
-  }
-
-  #progressText{
-    font-size:15px;
-  }
-
-  .category-box h2{
-    font-size:24px;
-  }
-
-}
-
-</style>
+<link rel="stylesheet" href="najjwajobsheet.css">
 </head>
 
 <body>
@@ -232,143 +13,89 @@ h1{
 <h1>NAJJWA JOB SHEET</h1>
 
 <p id="progressText" data-completed-percent="100">
-  Progress: 0% completed
+Progress: 0% completed
 </p>
 
-<!-- ================= SHEET CONTAINER ================= -->
 <div class="sheet-container">
 
   <!-- HTML -->
   <div class="category-box">
-
     <h2>HTML</h2>
 
     <a href="Jobsheet 1.html" class="sheet-box">JOB SHEET 1</a>
-
     <a href="Jobsheet 2.html" class="sheet-box">JOB SHEET 2</a>
-
     <a href="Jobsheet 3.html" class="sheet-box">JOB SHEET 3</a>
-
   </div>
 
   <!-- CSS -->
   <div class="category-box">
-
     <h2>CSS</h2>
 
     <a href="Jobsheet 4.html" class="sheet-box">JOB SHEET 4</a>
-
     <a href="Jobsheet 5.html" class="sheet-box">JOB SHEET 5</a>
-
     <a href="Jobsheet 6.html" class="sheet-box">JOB SHEET 6</a>
-
   </div>
 
   <!-- JAVASCRIPT -->
   <div class="category-box">
-
     <h2>JAVASCRIPT</h2>
 
     <a href="Jobsheet 7.html" class="sheet-box">JOB SHEET 7</a>
-
     <a href="Jobsheet 8.html" class="sheet-box">JOB SHEET 8</a>
-
     <a href="Jobsheet 9.html" class="sheet-box">JOB SHEET 9</a>
-
   </div>
 
   <!-- JQUERY -->
   <div class="category-box">
-
     <h2>JQUERY</h2>
 
     <a href="Jobsheet 10.html" class="sheet-box">JOB SHEET 10</a>
-
     <a href="Jobsheet 11.mp4" class="sheet-box">JOB SHEET 11</a>
-
     <a href="Jobsheet 12.mp4" class="sheet-box">JOB SHEET 12</a>
-
-    <a href="Jobsheet 13.mp4" class="sheet-box">JOB SHEET 13</a>
-
-    <a href="Jobsheet 14.mp4" class="sheet-box">JOB SHEET 14</a>
-
-    <a href="Jobsheet FL.mp4" class="sheet-box">JOB SHEET 15</a>
-
   </div>
 
   <!-- EXTRA -->
   <div class="category-box">
+    <h2>EXTRA</h2>
 
-    <h2>LOCAL STORAGE</h2>
-
-    
-
+    <a href="Jobsheet 13.mp4" class="sheet-box">JOB SHEET 13</a>
+    <a href="Jobsheet 14.mp4" class="sheet-box">JOB SHEET 14</a>
+    <a href="Jobsheet FL.mp4" class="sheet-box">JOB SHEET 15</a>
     <a href="Jobsheet LS.mp4" class="sheet-box">JOB SHEET 16</a>
-
     <a href="Jobsheet DM.mp4" class="sheet-box">JOB SHEET 17</a>
-
     <a href="Jobsheet Xtra.html" class="sheet-box">JOB SHEET EXTRA</a>
-
   </div>
 
 </div>
 
-<!-- ================= BACK BUTTON ================= -->
-<a href="next page.html" class="back-btn">
-  Back
-</a>
+<a href="next page.html" class="back-btn">Back</a>
 
 <script>
-
-/* ================= JOB SHEET PROGRESS ================= */
-
 const sheets = document.querySelectorAll('.sheet-box');
-
 const totalSheets = sheets.length;
 
 const progressEl = document.getElementById('progressText');
 
-let completedPercent =
-parseInt(progressEl.dataset.completedPercent) || 0;
+let completedPercent = parseInt(progressEl.dataset.completedPercent) || 0;
 
-let completedBoxes =
-Math.round((completedPercent / 100) * totalSheets);
+let completedBoxes = Math.round((completedPercent / 100) * totalSheets);
 
 let currentCompleted = 0;
 
-/* ================= UPDATE PROGRESS ================= */
-
 function updateProgress(){
-
-  const percent =
-  Math.round((currentCompleted / totalSheets) * 100);
-
-  progressEl.innerText =
-  `Progress: ${percent}% completed`;
-
+  const percent = Math.round((currentCompleted / totalSheets) * 100);
+  progressEl.innerText = `Progress: ${percent}% completed`;
 }
 
-/* ================= COMPLETED ANIMATION ================= */
-
 const interval = setInterval(() => {
-
   if(currentCompleted >= completedBoxes){
-
     clearInterval(interval);
-
   } else {
-
-    sheets[currentCompleted]
-    .classList.add('completed');
-
+    sheets[currentCompleted].classList.add('completed');
     currentCompleted++;
-
     updateProgress();
-
   }
-
 }, 250);
-
 </script>
 
 </body>
