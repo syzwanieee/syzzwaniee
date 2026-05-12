@@ -1,130 +1,312 @@
 /* ================= RESET ================= */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: 'Poppins', sans-serif;
-  box-sizing: border-box;
-  text-align: center;
-  overflow: hidden; /* page tak scroll */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* ================= BODY BACKGROUND ================= */
-body {
-  background: linear-gradient(120deg, #1a0028 0%, #2a003a 30%, #001a4d 60%, #002966 100%);
-  background-size: 400% 400%;
-  animation: bgMove 12s ease infinite;
-  color: #f7eaff;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: 100vh; /* penuh viewport */
-  padding: 20px 0;
+html,
+body{
+  width:100%;
+  height:100%;
+  font-family:'Poppins', sans-serif;
+  overflow:hidden;
 }
 
-/* ================= ANIMASI BACKGROUND ================= */
-@keyframes bgMove {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* ================= BODY ================= */
+body{
+  background: linear-gradient(
+    120deg,
+    #1a0028 0%,
+    #2a003a 30%,
+    #001a4d 60%,
+    #002966 100%
+  );
+
+  background-size:400% 400%;
+
+  animation:bgMove 12s ease infinite;
+
+  color:white;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+
+  padding:20px;
+}
+
+/* ================= BACKGROUND ANIMATION ================= */
+@keyframes bgMove{
+
+  0%{
+    background-position:0% 50%;
+  }
+
+  50%{
+    background-position:100% 50%;
+  }
+
+  100%{
+    background-position:0% 50%;
+  }
+
 }
 
 /* ================= TITLE ================= */
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 64px;
-  letter-spacing: 4px;
-  margin-bottom: 10px;
-  text-shadow: 0 0 15px rgba(190,80,255,0.9), 0 0 35px rgba(120,180,255,0.6);
+h1{
+
+  font-size:60px;
+
+  margin-bottom:10px;
+
+  text-align:center;
+
+  letter-spacing:3px;
+
+  text-shadow:
+  0 0 15px rgba(190,80,255,0.9),
+  0 0 35px rgba(120,180,255,0.6);
+
 }
 
 /* ================= PROGRESS TEXT ================= */
-#progressText {
-  margin-bottom: 20px;
-  font-weight: 600;
-  font-size: 18px;
+#progressText{
+
+  font-size:18px;
+
+  margin-bottom:20px;
+
+  font-weight:bold;
+
 }
 
-/* ================= SHEET CONTAINER ================= */
-.sheet-container {
-  flex: 1;                /* ambil ruang fleksibel */
-  max-width: 900px;
-  width: 100%;
-  padding: 10px;
-  overflow-y: auto;       /* scroll hanya di sini */
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
+/* ================= MAIN CONTAINER ================= */
+.sheet-container{
+
+  width:100%;
+
+  max-width:1200px;
+
+  flex:1;
+
+  overflow-y:auto;
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(300px,1fr));
+
+  gap:25px;
+
+  padding:10px;
+
 }
 
-/* ================= SHEET BOX ================= */
-.sheet-box {
-  display: block;
-  padding: 24px 18px;
-  border-radius: 22px;
-  background: rgba(255,255,255,0.05);   /* lebih transparent */
-  border: 1px solid rgba(190,80,255,0.3); /* border lembut */
-  backdrop-filter: blur(8px);            /* blur ringan */
-  box-shadow: 0 0 15px rgba(190,80,255,0.25), 0 0 25px rgba(120,180,255,0.2); /* shadow lembut */
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: popUp 0.5s forwards;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.4s ease;
+/* ================= CATEGORY BOX ================= */
+.category-box{
+
+  background:rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(190,80,255,0.3);
+
+  border-radius:25px;
+
+  padding:25px;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+  0 0 20px rgba(190,80,255,0.2),
+  0 0 40px rgba(120,180,255,0.1);
+
+  animation:fadeUp 0.6s ease forwards;
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:15px;
+
 }
 
-.sheet-box:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 0 25px rgba(190,80,255,0.5), 0 0 45px rgba(120,180,255,0.35);
+/* ================= CATEGORY TITLE ================= */
+.category-box h2{
+
+  font-size:28px;
+
+  margin-bottom:5px;
+
+  text-align:center;
+
+  color:white;
+
+  text-shadow:
+  0 0 10px rgba(190,80,255,0.7);
+
 }
 
-@keyframes popUp {
-  to { opacity: 1; transform: translateY(0); }
+/* ================= JOB SHEET BOX ================= */
+.sheet-box{
+
+  display:block;
+
+  padding:18px;
+
+  border-radius:18px;
+
+  text-decoration:none;
+
+  color:white;
+
+  background:
+  rgba(255,255,255,0.05);
+
+  border:
+  1px solid rgba(255,255,255,0.1);
+
+  transition:0.3s ease;
+
+  font-weight:600;
+
+  text-align:center;
+
+}
+
+/* ================= HOVER EFFECT ================= */
+.sheet-box:hover{
+
+  transform:
+  translateY(-5px)
+  scale(1.02);
+
+  background:
+  rgba(190,80,255,0.18);
+
+  box-shadow:
+  0 0 20px rgba(190,80,255,0.45),
+  0 0 40px rgba(120,180,255,0.25);
+
 }
 
 /* ================= COMPLETED SHEET ================= */
-.sheet-box.completed {
-  border-color: rgba(80,255,120,0.6) !important;
-  box-shadow: 0 0 20px rgba(80,255,120,0.5) !important;
-  background: rgba(80,255,120,0.1);
+.sheet-box.completed{
+
+  border-color:
+  rgba(80,255,120,0.6);
+
+  background:
+  rgba(80,255,120,0.12);
+
+  box-shadow:
+  0 0 18px rgba(80,255,120,0.5);
+
 }
 
 /* ================= BACK BUTTON ================= */
-.back-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 28px;
-  background: rgba(190,80,255,0.45);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 16px;
-  transition: 0.3s ease;
+.back-btn{
+
+  margin-top:20px;
+
+  padding:12px 30px;
+
+  text-decoration:none;
+
+  color:white;
+
+  border-radius:16px;
+
+  background:
+  rgba(190,80,255,0.4);
+
+  transition:0.3s ease;
+
 }
 
-.back-btn:hover {
-  background: rgba(190,80,255,0.75);
+/* ================= BACK BUTTON HOVER ================= */
+.back-btn:hover{
+
+  background:
+  rgba(190,80,255,0.8);
+
+  transform:scale(1.05);
+
+}
+
+/* ================= FADE ANIMATION ================= */
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:translateY(20px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+  }
+
+}
+
+/* ================= SCROLLBAR ================= */
+.sheet-container::-webkit-scrollbar{
+
+  width:8px;
+
+}
+
+.sheet-container::-webkit-scrollbar-thumb{
+
+  background:
+  rgba(255,255,255,0.25);
+
+  border-radius:10px;
+
 }
 
 /* ================= RESPONSIVE ================= */
-@media screen and (max-width: 768px) {
-  h1 { font-size: 8vw; }
-  .sheet-container {
-    display: flex;
-    flex-direction: column; /* stack ke bawah */
-    align-items: center;
-    gap: 15px;
+@media screen and (max-width:768px){
+
+  h1{
+
+    font-size:42px;
+
   }
-  .sheet-box { width: 80%; padding: 20px; }
-  #progressText { font-size: 16px; }
-  .back-btn { padding: 10px 24px; }
+
+  .sheet-container{
+
+    grid-template-columns:1fr;
+
+  }
+
 }
 
-@media screen and (max-width: 480px) {
-  h1 { font-size: 10vw; }
-  .sheet-box { width: 90%; padding: 15px; }
-  #progressText { font-size: 14px; }
-  .back-btn { padding: 8px 20px; font-size: 0.9rem; }
+@media screen and (max-width:480px){
+
+  h1{
+
+    font-size:34px;
+
+  }
+
+  #progressText{
+
+    font-size:15px;
+
+  }
+
+  .category-box h2{
+
+    font-size:24px;
+
+  }
+
 }
